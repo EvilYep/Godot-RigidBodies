@@ -1,0 +1,579 @@
+[gd_scene load_steps=32 format=3 uid="uid://c5t1sm5ucreyj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_1kofh"]
+[ext_resource type="PackedScene" uid="uid://cq1q0xlwbj4pg" path="res://brick.tscn" id="1_shw2f"]
+[ext_resource type="Script" path="res://UI.gd" id="2_iwxtk"]
+[ext_resource type="PackedScene" uid="uid://bfrj856pd7i6i" path="res://shell.tscn" id="2_tg51j"]
+[ext_resource type="Texture2D" uid="uid://cjgpb25x36rtm" path="res://Assets/spacebar.png" id="3_lxtnf"]
+[ext_resource type="Texture2D" uid="uid://c2wc3lhjo2l04" path="res://Assets/left.png" id="3_yktwn"]
+[ext_resource type="Texture2D" uid="uid://criso8rpg0crp" path="res://Assets/up.png" id="4_i4mys"]
+[ext_resource type="Texture2D" uid="uid://do6bhop0wehk7" path="res://Assets/right.png" id="5_0o0l3"]
+[ext_resource type="Texture2D" uid="uid://o6vv46ed4nbe" path="res://Assets/down.png" id="6_5gyqr"]
+[ext_resource type="Script" path="res://Background.gd" id="8_lwl3j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s20n"]
+atlas = ExtResource("3_lxtnf")
+region = Rect2(0, 0, 104, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cv0u"]
+atlas = ExtResource("3_yktwn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5nbx"]
+atlas = ExtResource("4_i4mys")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5x6t"]
+atlas = ExtResource("5_0o0l3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfe1x"]
+atlas = ExtResource("6_5gyqr")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Gradient" id="Gradient_ua00q"]
+offsets = PackedFloat32Array(0, 0.990741)
+colors = PackedColorArray(0.476907, 0.685058, 0.80549, 1, 0.41988, 0.778335, 0.501888, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_imqqj"]
+gradient = SubResource("Gradient_ua00q")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_15rgt"]
+load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6ey8"]
+size = Vector2(927, 133)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sg3"]
+size = Vector2(602, 170)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sok3r"]
+load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_glvkw"]
+size = Vector2(42, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao0nk"]
+size = Vector2(604, 154)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi8ot"]
+size = Vector2(926, 146)
+
+[sub_resource type="Animation" id="Animation_5f0wl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SpaceBar:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 104, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/Left:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/Down:texture:region")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/Right:texture:region")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("UI/Up:texture:region")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_waivg"]
+resource_name = "press_down"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Down:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_illrs"]
+resource_name = "press_left"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Left:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_ahiu0"]
+resource_name = "press_right"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Right:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_68818"]
+resource_name = "press_spacebar"
+length = 0.1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SpaceBar:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 104, 16), Rect2(0, 16, 104, 16), Rect2(0, 32, 104, 16), Rect2(0, 48, 104, 16), Rect2(0, 0, 104, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_h4g21"]
+resource_name = "press_up"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Up:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gm7y8"]
+_data = {
+"RESET": SubResource("Animation_5f0wl"),
+"press_down": SubResource("Animation_waivg"),
+"press_left": SubResource("Animation_illrs"),
+"press_right": SubResource("Animation_ahiu0"),
+"press_spacebar": SubResource("Animation_68818"),
+"press_up": SubResource("Animation_h4g21")
+}
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1kofh")
+
+[node name="UI" type="Control" parent="."]
+z_index = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_iwxtk")
+
+[node name="SpaceBar" type="TextureRect" parent="UI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("AtlasTexture_2s20n")
+
+[node name="Left" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 44.0
+offset_right = 64.0
+offset_bottom = 60.0
+texture = SubResource("AtlasTexture_6cv0u")
+
+[node name="Up" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 24.0
+offset_right = 84.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_r5nbx")
+
+[node name="Right" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 44.0
+offset_right = 104.0
+offset_bottom = 60.0
+texture = SubResource("AtlasTexture_x5x6t")
+
+[node name="Down" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = 68.0
+offset_top = 44.0
+offset_right = 84.0
+offset_bottom = 60.0
+texture = SubResource("AtlasTexture_yfe1x")
+
+[node name="Bounds" type="Node2D" parent="."]
+
+[node name="Background" type="TextureRect" parent="Bounds"]
+modulate = Color(0.894118, 0.784314, 0.745098, 1)
+offset_right = 640.0
+offset_bottom = 360.0
+texture = SubResource("GradientTexture1D_imqqj")
+script = ExtResource("8_lwl3j")
+
+[node name="Brick" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(21, 10.5)
+
+[node name="Brick49" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(249, 10.5)
+
+[node name="Sprite2D" parent="Bounds/Brick49" index="0"]
+texture = SubResource("CompressedTexture2D_15rgt")
+
+[node name="CollisionShape2D" parent="Bounds/Brick49" index="1"]
+position = Vector2(61.5, -60)
+shape = SubResource("RectangleShape2D_f6ey8")
+
+[node name="Brick2" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(63, 10.5)
+
+[node name="Brick3" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(105, 10.5)
+
+[node name="Brick4" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(147, 10.5)
+
+[node name="Brick5" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(189, 10.5)
+
+[node name="Brick6" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(231, 10.5)
+
+[node name="Brick7" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(273, 10.5)
+
+[node name="Brick33" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 42)
+rotation = 1.5708
+
+[node name="Brick34" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 84)
+rotation = 1.5708
+
+[node name="Brick35" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 126)
+rotation = 1.5708
+
+[node name="Brick36" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 168)
+rotation = 1.5708
+
+[node name="Brick50" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 168)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="Bounds/Brick50" index="1"]
+position = Vector2(18, 78.5)
+shape = SubResource("RectangleShape2D_k0sg3")
+
+[node name="Brick37" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 294)
+rotation = 1.5708
+
+[node name="Brick40" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(0, 329)
+
+[node name="Sprite2D" parent="Bounds/Brick40" index="0"]
+position = Vector2(0, -1.75)
+scale = Vector2(0.5, 0.583333)
+texture = SubResource("CompressedTexture2D_sok3r")
+
+[node name="CollisionShape2D" parent="Bounds/Brick40" index="1"]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_glvkw")
+
+[node name="Brick38" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 210)
+rotation = 1.5708
+
+[node name="Brick39" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(10.5, 252)
+rotation = 1.5708
+
+[node name="Brick41" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 42)
+rotation = 1.5708
+
+[node name="Brick42" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 84)
+rotation = 1.5708
+
+[node name="Brick43" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 126)
+rotation = 1.5708
+
+[node name="Brick51" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 126)
+rotation = 1.5708
+
+[node name="CollisionShape2D" parent="Bounds/Brick51" index="1"]
+position = Vector2(60, -69.5)
+shape = SubResource("RectangleShape2D_ao0nk")
+
+[node name="Brick44" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 168)
+rotation = 1.5708
+
+[node name="Brick45" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 294)
+rotation = 1.5708
+
+[node name="Brick46" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(640, 329)
+
+[node name="Sprite2D" parent="Bounds/Brick46" index="0"]
+position = Vector2(0, -1.75)
+scale = Vector2(0.5, 0.583333)
+texture = SubResource("CompressedTexture2D_sok3r")
+
+[node name="CollisionShape2D" parent="Bounds/Brick46" index="1"]
+position = Vector2(0, -1.75)
+shape = SubResource("RectangleShape2D_glvkw")
+
+[node name="Brick47" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 210)
+rotation = 1.5708
+
+[node name="Brick48" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(629.5, 252)
+rotation = 1.5708
+
+[node name="Brick8" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(315, 10.5)
+
+[node name="Brick9" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(357, 10.5)
+
+[node name="Brick10" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(399, 10.5)
+
+[node name="Brick11" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(441, 10.5)
+
+[node name="Brick12" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(483, 10.5)
+
+[node name="Brick13" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(525, 10.5)
+
+[node name="Brick14" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(567, 10.5)
+
+[node name="Brick15" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(609, 10.5)
+
+[node name="Brick16" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(651, 10.5)
+
+[node name="Brick17" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(21, 350)
+
+[node name="Brick18" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(63, 350)
+
+[node name="Brick19" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(105, 350)
+
+[node name="Brick20" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(147, 350)
+
+[node name="Brick21" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(189, 350)
+
+[node name="Brick22" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(231, 350)
+
+[node name="Brick23" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(273, 350)
+
+[node name="Brick52" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(273, 350)
+
+[node name="CollisionShape2D" parent="Bounds/Brick52" index="1"]
+position = Vector2(38, 65)
+shape = SubResource("RectangleShape2D_vi8ot")
+
+[node name="Brick24" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(315, 350)
+
+[node name="Brick25" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(357, 350)
+
+[node name="Brick26" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(399, 350)
+
+[node name="Brick27" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(441, 350)
+
+[node name="Brick28" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(483, 350)
+
+[node name="Brick29" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(525, 350)
+
+[node name="Brick30" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(567, 350)
+
+[node name="Brick31" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(609, 350)
+
+[node name="Brick32" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(651, 350)
+
+[node name="Normal" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(487, 138)
+
+[node name="Very Heavy" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(191, 129)
+
+[node name="Shell" parent="Very Heavy" index="1"]
+mass = 50.0
+
+[node name="Very Light" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(389, 65)
+
+[node name="Shell" parent="Very Light" index="1"]
+mass = 0.25
+
+[node name="Move Right" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(284, 220)
+
+[node name="Shell" parent="Move Right" index="1"]
+linear_velocity = Vector2(-500, -500)
+constant_force = Vector2(1000, 0)
+
+[node name="Balloon" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(318, 323)
+
+[node name="Shell" parent="Balloon" index="1"]
+constant_force = Vector2(0, -1000)
+
+[node name="Spinning" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(548, 243)
+
+[node name="Shell" parent="Spinning" index="1"]
+constant_torque = -8000.0
+
+[node name="Spinning No Grav" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(532, 192)
+
+[node name="Shell" parent="Spinning No Grav" index="1"]
+gravity_scale = 0.0
+constant_torque = 1000.0
+
+[node name="No Gravity" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(308, 155)
+
+[node name="Shell" parent="No Gravity" index="1"]
+gravity_scale = 0.0
+
+[node name="Freeze Static" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(604, 35)
+
+[node name="Shell" parent="Freeze Static" index="1"]
+freeze = true
+freeze_mode = 0
+ignore_unfreeze = true
+
+[node name="Freeze Kinematic" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(604, 63)
+
+[node name="Shell" parent="Freeze Kinematic" index="1"]
+freeze = true
+ignore_unfreeze = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gm7y8")
+}
+
+[editable path="Bounds/Brick49"]
+[editable path="Bounds/Brick50"]
+[editable path="Bounds/Brick40"]
+[editable path="Bounds/Brick51"]
+[editable path="Bounds/Brick46"]
+[editable path="Bounds/Brick52"]
+[editable path="Very Heavy"]
+[editable path="Very Light"]
+[editable path="Move Right"]
+[editable path="Balloon"]
+[editable path="Spinning"]
+[editable path="Spinning No Grav"]
+[editable path="No Gravity"]
+[editable path="Freeze Static"]
+[editable path="Freeze Kinematic"]
