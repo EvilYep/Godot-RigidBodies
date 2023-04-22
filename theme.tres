@@ -1,0 +1,79 @@
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://b0yna1pxvt1d7"]
+
+[ext_resource type="Texture2D" uid="uid://78y5taa5gbhk" path="res://Assets/slider_h.png" id="1_ense5"]
+[ext_resource type="Texture2D" uid="uid://dbca4cvuami1e" path="res://Assets/slider_v.png" id="1_gk3ll"]
+[ext_resource type="FontFile" uid="uid://cwjdgk64d1rlw" path="res://Assets/Battlenet.ttf" id="1_pnpcg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mkmk"]
+atlas = ExtResource("1_ense5")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6md2w"]
+atlas = ExtResource("1_ense5")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnfwi"]
+texture = ExtResource("1_ense5")
+texture_margin_left = 2.0
+region_rect = Rect2(0, 16, 16, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bgs3e"]
+texture = ExtResource("1_ense5")
+texture_margin_left = 2.0
+region_rect = Rect2(0, 16, 16, 8)
+modulate_color = Color(1.2, 1.2, 1.2, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wx4mp"]
+texture = ExtResource("1_ense5")
+texture_margin_left = 2.0
+texture_margin_top = 3.0
+texture_margin_right = 2.0
+texture_margin_bottom = 3.0
+region_rect = Rect2(0, 16, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inqpl"]
+atlas = ExtResource("1_gk3ll")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lrrr"]
+atlas = ExtResource("1_gk3ll")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2p4ee"]
+texture = ExtResource("1_gk3ll")
+texture_margin_bottom = 2.0
+region_rect = Rect2(16, 20, 8, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wd4yy"]
+texture = ExtResource("1_gk3ll")
+texture_margin_bottom = 2.0
+region_rect = Rect2(16, 20, 8, 12)
+modulate_color = Color(1.2, 1.2, 1.2, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nj3w2"]
+texture = ExtResource("1_gk3ll")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(8, 8, 8, 24)
+
+[resource]
+HSlider/icons/grabber = SubResource("AtlasTexture_7mkmk")
+HSlider/icons/grabber_highlight = SubResource("AtlasTexture_6md2w")
+HSlider/styles/grabber_area = SubResource("StyleBoxTexture_fnfwi")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_bgs3e")
+HSlider/styles/slider = SubResource("StyleBoxTexture_wx4mp")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 1, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 1
+Label/constants/shadow_offset_x = 1
+Label/constants/shadow_offset_y = 1
+Label/constants/shadow_outline_size = 0
+Label/fonts/font = ExtResource("1_pnpcg")
+VSlider/icons/grabber = SubResource("AtlasTexture_inqpl")
+VSlider/icons/grabber_highlight = SubResource("AtlasTexture_0lrrr")
+VSlider/styles/grabber_area = SubResource("StyleBoxTexture_2p4ee")
+VSlider/styles/grabber_area_highlight = SubResource("StyleBoxTexture_wd4yy")
+VSlider/styles/slider = SubResource("StyleBoxTexture_nj3w2")

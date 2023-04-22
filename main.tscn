@@ -1,51 +1,22 @@
-[gd_scene load_steps=32 format=3 uid="uid://c5t1sm5ucreyj"]
+[gd_scene load_steps=28 format=3 uid="uid://c5t1sm5ucreyj"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1kofh"]
 [ext_resource type="PackedScene" uid="uid://cq1q0xlwbj4pg" path="res://brick.tscn" id="1_shw2f"]
-[ext_resource type="Script" path="res://UI.gd" id="2_iwxtk"]
-[ext_resource type="PackedScene" uid="uid://bfrj856pd7i6i" path="res://shell.tscn" id="2_tg51j"]
-[ext_resource type="Texture2D" uid="uid://cjgpb25x36rtm" path="res://Assets/spacebar.png" id="3_lxtnf"]
-[ext_resource type="Texture2D" uid="uid://c2wc3lhjo2l04" path="res://Assets/left.png" id="3_yktwn"]
-[ext_resource type="Texture2D" uid="uid://criso8rpg0crp" path="res://Assets/up.png" id="4_i4mys"]
-[ext_resource type="Texture2D" uid="uid://do6bhop0wehk7" path="res://Assets/right.png" id="5_0o0l3"]
-[ext_resource type="Texture2D" uid="uid://o6vv46ed4nbe" path="res://Assets/down.png" id="6_5gyqr"]
+[ext_resource type="PackedScene" uid="uid://26svmo1nq6vv" path="res://ui.tscn" id="2_p41du"]
+[ext_resource type="PackedScene" uid="uid://t7vjk282t803" path="res://shell.tscn" id="2_tg51j"]
+[ext_resource type="Texture2D" uid="uid://didbrs7fq4bjm" path="res://Assets/sky-1.png" id="4_a0nit"]
+[ext_resource type="Texture2D" uid="uid://umk7c1tnddch" path="res://Assets/background-2.png" id="5_sr14d"]
 [ext_resource type="Script" path="res://Background.gd" id="8_lwl3j"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2s20n"]
-atlas = ExtResource("3_lxtnf")
-region = Rect2(0, 0, 104, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6cv0u"]
-atlas = ExtResource("3_yktwn")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5nbx"]
-atlas = ExtResource("4_i4mys")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x5x6t"]
-atlas = ExtResource("5_0o0l3")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yfe1x"]
-atlas = ExtResource("6_5gyqr")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Gradient" id="Gradient_ua00q"]
-offsets = PackedFloat32Array(0, 0.990741)
-colors = PackedColorArray(0.476907, 0.685058, 0.80549, 1, 0.41988, 0.778335, 0.501888, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_imqqj"]
-gradient = SubResource("Gradient_ua00q")
+[ext_resource type="Shader" path="res://shell.gdshader" id="8_q5aih"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_15rgt"]
 load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f6ey8"]
-size = Vector2(927, 133)
+size = Vector2(927, 137)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sg3"]
-size = Vector2(602, 170)
+size = Vector2(602, 174)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sok3r"]
 load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
@@ -54,240 +25,110 @@ load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.c
 size = Vector2(42, 24.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao0nk"]
-size = Vector2(604, 154)
+size = Vector2(604, 157)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vi8ot"]
-size = Vector2(926, 146)
+size = Vector2(926, 149)
 
-[sub_resource type="Animation" id="Animation_5f0wl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/SpaceBar:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 104, 16)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("UI/Left:texture:region")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 16, 16)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("UI/Down:texture:region")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 16, 16)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("UI/Right:texture:region")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 16, 16)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("UI/Up:texture:region")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 16, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cd8e1"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="Animation" id="Animation_waivg"]
-resource_name = "press_down"
-length = 0.05
-step = 0.025
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/Down:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia1if"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="Animation" id="Animation_illrs"]
-resource_name = "press_left"
-length = 0.05
-step = 0.025
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/Left:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7rdst"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="Animation" id="Animation_ahiu0"]
-resource_name = "press_right"
-length = 0.05
-step = 0.025
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/Right:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvqci"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="Animation" id="Animation_68818"]
-resource_name = "press_spacebar"
-length = 0.1
-step = 0.025
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/SpaceBar:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 104, 16), Rect2(0, 16, 104, 16), Rect2(0, 32, 104, 16), Rect2(0, 48, 104, 16), Rect2(0, 0, 104, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kyvla"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="Animation" id="Animation_h4g21"]
-resource_name = "press_up"
-length = 0.05
-step = 0.025
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("UI/Up:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 0, 16, 16)]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lv6xq"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_gm7y8"]
-_data = {
-"RESET": SubResource("Animation_5f0wl"),
-"press_down": SubResource("Animation_waivg"),
-"press_left": SubResource("Animation_illrs"),
-"press_right": SubResource("Animation_ahiu0"),
-"press_spacebar": SubResource("Animation_68818"),
-"press_up": SubResource("Animation_h4g21")
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dgt5v"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5yeil"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq6yv"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ossqi"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lm4hv"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wqnfn"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1kofh")
 
-[node name="UI" type="Control" parent="."]
-z_index = 1
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("2_iwxtk")
-
-[node name="SpaceBar" type="TextureRect" parent="UI"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 24.0
-offset_top = 64.0
-offset_right = 128.0
-offset_bottom = 80.0
-grow_horizontal = 2
-grow_vertical = 0
-texture = SubResource("AtlasTexture_2s20n")
-
-[node name="Left" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = 48.0
-offset_top = 44.0
-offset_right = 64.0
-offset_bottom = 60.0
-texture = SubResource("AtlasTexture_6cv0u")
-
-[node name="Up" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 24.0
-offset_right = 84.0
-offset_bottom = 40.0
-texture = SubResource("AtlasTexture_r5nbx")
-
-[node name="Right" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = 88.0
-offset_top = 44.0
-offset_right = 104.0
-offset_bottom = 60.0
-texture = SubResource("AtlasTexture_x5x6t")
-
-[node name="Down" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = 68.0
-offset_top = 44.0
-offset_right = 84.0
-offset_bottom = 60.0
-texture = SubResource("AtlasTexture_yfe1x")
+[node name="UI" parent="." instance=ExtResource("2_p41du")]
 
 [node name="Bounds" type="Node2D" parent="."]
 
-[node name="Background" type="TextureRect" parent="Bounds"]
-modulate = Color(0.894118, 0.784314, 0.745098, 1)
-offset_right = 640.0
-offset_bottom = 360.0
-texture = SubResource("GradientTexture1D_imqqj")
+[node name="Backround" type="Node2D" parent="Bounds"]
 script = ExtResource("8_lwl3j")
+
+[node name="Sky" type="TextureRect" parent="Bounds/Backround"]
+texture_repeat = 3
+offset_right = 800.0
+offset_bottom = 300.0
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("4_a0nit")
+
+[node name="Skyline" type="TextureRect" parent="Bounds/Backround"]
+texture_repeat = 3
+offset_top = -83.0
+offset_right = 853.0
+offset_bottom = 551.0
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("5_sr14d")
 
 [node name="Brick" parent="Bounds" instance=ExtResource("1_shw2f")]
 position = Vector2(21, 10.5)
+
+[node name="Brick53" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(281, 219)
+
+[node name="Brick54" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(323, 219)
+
+[node name="Brick55" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(365, 219)
+
+[node name="Brick56" parent="Bounds" instance=ExtResource("1_shw2f")]
+position = Vector2(407, 219)
 
 [node name="Brick49" parent="Bounds" instance=ExtResource("1_shw2f")]
 position = Vector2(249, 10.5)
@@ -296,7 +137,7 @@ position = Vector2(249, 10.5)
 texture = SubResource("CompressedTexture2D_15rgt")
 
 [node name="CollisionShape2D" parent="Bounds/Brick49" index="1"]
-position = Vector2(61.5, -60)
+position = Vector2(61.5, -58)
 shape = SubResource("RectangleShape2D_f6ey8")
 
 [node name="Brick2" parent="Bounds" instance=ExtResource("1_shw2f")]
@@ -338,7 +179,7 @@ position = Vector2(10.5, 168)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Bounds/Brick50" index="1"]
-position = Vector2(18, 78.5)
+position = Vector2(18, 76.5)
 shape = SubResource("RectangleShape2D_k0sg3")
 
 [node name="Brick37" parent="Bounds" instance=ExtResource("1_shw2f")]
@@ -382,7 +223,7 @@ position = Vector2(629.5, 126)
 rotation = 1.5708
 
 [node name="CollisionShape2D" parent="Bounds/Brick51" index="1"]
-position = Vector2(60, -69.5)
+position = Vector2(60, -68.0001)
 shape = SubResource("RectangleShape2D_ao0nk")
 
 [node name="Brick44" parent="Bounds" instance=ExtResource("1_shw2f")]
@@ -465,7 +306,7 @@ position = Vector2(273, 350)
 position = Vector2(273, 350)
 
 [node name="CollisionShape2D" parent="Bounds/Brick52" index="1"]
-position = Vector2(38, 65)
+position = Vector2(38, 63.5)
 shape = SubResource("RectangleShape2D_vi8ot")
 
 [node name="Brick24" parent="Bounds" instance=ExtResource("1_shw2f")]
@@ -495,72 +336,123 @@ position = Vector2(609, 350)
 [node name="Brick32" parent="Bounds" instance=ExtResource("1_shw2f")]
 position = Vector2(651, 350)
 
-[node name="Normal" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(487, 138)
-
-[node name="Very Heavy" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(191, 129)
-
-[node name="Shell" parent="Very Heavy" index="1"]
-mass = 50.0
-
-[node name="Very Light" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(389, 65)
-
-[node name="Shell" parent="Very Light" index="1"]
-mass = 0.25
-
-[node name="Move Right" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(284, 220)
-
-[node name="Shell" parent="Move Right" index="1"]
-linear_velocity = Vector2(-500, -500)
-constant_force = Vector2(1000, 0)
-
-[node name="Balloon" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(318, 323)
-
-[node name="Shell" parent="Balloon" index="1"]
-constant_force = Vector2(0, -1000)
-
-[node name="Spinning" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(548, 243)
-
-[node name="Shell" parent="Spinning" index="1"]
-constant_torque = -8000.0
-
-[node name="Spinning No Grav" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(532, 192)
-
-[node name="Shell" parent="Spinning No Grav" index="1"]
-gravity_scale = 0.0
-constant_torque = 1000.0
-
-[node name="No Gravity" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(308, 155)
-
-[node name="Shell" parent="No Gravity" index="1"]
-gravity_scale = 0.0
-
 [node name="Freeze Static" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(604, 35)
+position = Vector2(580, 49)
 
 [node name="Shell" parent="Freeze Static" index="1"]
 freeze = true
 freeze_mode = 0
 ignore_unfreeze = true
 
+[node name="Sprite" parent="Freeze Static/Shell" index="0"]
+material = SubResource("ShaderMaterial_cd8e1")
+
 [node name="Freeze Kinematic" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(604, 63)
+position = Vector2(580, 85)
 
 [node name="Shell" parent="Freeze Kinematic" index="1"]
 freeze = true
 ignore_unfreeze = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_gm7y8")
-}
+[node name="Sprite" parent="Freeze Kinematic/Shell" index="0"]
+material = SubResource("ShaderMaterial_ia1if")
+
+[node name="Normal" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(308, 193)
+
+[node name="Very Heavy" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(356, 145)
+
+[node name="Shell" parent="Very Heavy" index="1"]
+mass = 50.0
+
+[node name="Sprite" parent="Very Heavy/Shell" index="0"]
+material = SubResource("ShaderMaterial_7rdst")
+
+[node name="Very Light" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(356, 193)
+
+[node name="Shell" parent="Very Light" index="1"]
+mass = 0.25
+
+[node name="Sprite" parent="Very Light/Shell" index="0"]
+material = SubResource("ShaderMaterial_bvqci")
+
+[node name="Force Up" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(320, 169)
+
+[node name="Shell" parent="Force Up" index="1"]
+constant_force = Vector2(0, -1000)
+
+[node name="Sprite" parent="Force Up/Shell" index="0"]
+material = SubResource("ShaderMaterial_kyvla")
+
+[node name="Force Up Left" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(296, 169)
+
+[node name="Shell" parent="Force Up Left" index="1"]
+constant_force = Vector2(-500, -1000)
+
+[node name="Sprite" parent="Force Up Left/Shell" index="0"]
+material = SubResource("ShaderMaterial_lv6xq")
+
+[node name="Force AntiGrav" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(332, 145)
+
+[node name="Shell" parent="Force AntiGrav" index="1"]
+constant_force = Vector2(0, -980)
+
+[node name="Sprite" parent="Force AntiGrav/Shell" index="0"]
+material = SubResource("ShaderMaterial_dgt5v")
+
+[node name="Switch Central Force" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(392, 169)
+
+[node name="Shell" parent="Switch Central Force" index="1"]
+constant_force = Vector2(1000, 0)
+
+[node name="Sprite" parent="Switch Central Force/Shell" index="0"]
+material = SubResource("ShaderMaterial_5yeil")
+
+[node name="Switch Force Offset" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(344, 169)
+
+[node name="Sprite" parent="Switch Force Offset/Shell" index="0"]
+material = SubResource("ShaderMaterial_vq6yv")
+
+[node name="No Gravity" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(308, 145)
+
+[node name="Shell" parent="No Gravity" index="1"]
+gravity_scale = 0.0
+
+[node name="Sprite" parent="No Gravity/Shell" index="0"]
+material = SubResource("ShaderMaterial_ossqi")
+
+[node name="Torque" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(332, 193)
+
+[node name="Shell" parent="Torque" index="1"]
+constant_torque = -1000.0
+
+[node name="Sprite" parent="Torque/Shell" index="0"]
+material = SubResource("ShaderMaterial_lm4hv")
+
+[node name="Torque No Grav" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(368, 169)
+
+[node name="Shell" parent="Torque No Grav" index="1"]
+gravity_scale = 0.0
+constant_torque = -1000.0
+
+[node name="Sprite" parent="Torque No Grav/Shell" index="0"]
+material = SubResource("ShaderMaterial_wqnfn")
+
+[node name="Offset Impulse" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(380, 145)
+
+[node name="Torque Impulse" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(380, 193)
 
 [editable path="Bounds/Brick49"]
 [editable path="Bounds/Brick50"]
@@ -568,12 +460,15 @@ libraries = {
 [editable path="Bounds/Brick51"]
 [editable path="Bounds/Brick46"]
 [editable path="Bounds/Brick52"]
-[editable path="Very Heavy"]
-[editable path="Very Light"]
-[editable path="Move Right"]
-[editable path="Balloon"]
-[editable path="Spinning"]
-[editable path="Spinning No Grav"]
-[editable path="No Gravity"]
 [editable path="Freeze Static"]
 [editable path="Freeze Kinematic"]
+[editable path="Very Heavy"]
+[editable path="Very Light"]
+[editable path="Force Up"]
+[editable path="Force Up Left"]
+[editable path="Force AntiGrav"]
+[editable path="Switch Central Force"]
+[editable path="Switch Force Offset"]
+[editable path="No Gravity"]
+[editable path="Torque"]
+[editable path="Torque No Grav"]
