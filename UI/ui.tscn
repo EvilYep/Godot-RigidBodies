@@ -1,0 +1,354 @@
+[gd_scene load_steps=25 format=3 uid="uid://dtc60ewnirmg2"]
+
+[ext_resource type="Script" path="res://UI/UI.gd" id="1_yv5o3"]
+[ext_resource type="Texture2D" uid="uid://cjgpb25x36rtm" path="res://Assets/spacebar.png" id="2_c72hp"]
+[ext_resource type="Texture2D" uid="uid://c2wc3lhjo2l04" path="res://Assets/left.png" id="3_0xdn2"]
+[ext_resource type="Texture2D" uid="uid://criso8rpg0crp" path="res://Assets/up.png" id="4_ubtp0"]
+[ext_resource type="Texture2D" uid="uid://do6bhop0wehk7" path="res://Assets/right.png" id="5_kjwqk"]
+[ext_resource type="Texture2D" uid="uid://o6vv46ed4nbe" path="res://Assets/down.png" id="6_8tcch"]
+[ext_resource type="Theme" uid="uid://b0yna1pxvt1d7" path="res://UI/theme.tres" id="7_5u0s4"]
+[ext_resource type="Texture2D" uid="uid://1bmr0trkod8q" path="res://Assets/reset_button.png" id="8_2vao5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s20n"]
+atlas = ExtResource("2_c72hp")
+region = Rect2(0, 0, 104, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cv0u"]
+atlas = ExtResource("3_0xdn2")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5nbx"]
+atlas = ExtResource("4_ubtp0")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5x6t"]
+atlas = ExtResource("5_kjwqk")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yfe1x"]
+atlas = ExtResource("6_8tcch")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Animation" id="Animation_5f0wl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceBar:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 104, 16)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Down:texture:region")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Left:texture:region")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Right:texture:region")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Up:texture:region")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_waivg"]
+resource_name = "press_down"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Down:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_illrs"]
+resource_name = "press_left"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_ahiu0"]
+resource_name = "press_right"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Right:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_68818"]
+resource_name = "press_spacebar"
+length = 0.1
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpaceBar:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 104, 16), Rect2(0, 16, 104, 16), Rect2(0, 32, 104, 16), Rect2(0, 48, 104, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_h4g21"]
+resource_name = "press_up"
+length = 0.05
+step = 0.025
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Up:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gm7y8"]
+_data = {
+"RESET": SubResource("Animation_5f0wl"),
+"press_down": SubResource("Animation_waivg"),
+"press_left": SubResource("Animation_illrs"),
+"press_right": SubResource("Animation_ahiu0"),
+"press_spacebar": SubResource("Animation_68818"),
+"press_up": SubResource("Animation_h4g21")
+}
+
+[sub_resource type="Theme" id="Theme_ok0kl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pmimn"]
+atlas = ExtResource("8_2vao5")
+region = Rect2(28, 0, 14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riag1"]
+atlas = ExtResource("8_2vao5")
+region = Rect2(0, -1, 14, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1x64f"]
+atlas = ExtResource("8_2vao5")
+region = Rect2(14, 0, 14, 16)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_yv5o3")
+
+[node name="SpaceBar" type="TextureRect" parent="."]
+offset_left = 16.0
+offset_top = 56.0
+offset_right = 120.0
+offset_bottom = 72.0
+texture = SubResource("AtlasTexture_2s20n")
+
+[node name="SpaceBarButton" type="TextureButton" parent="SpaceBar"]
+layout_mode = 0
+offset_right = 104.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
+
+[node name="Left" type="TextureRect" parent="."]
+offset_left = 24.0
+offset_top = 36.0
+offset_right = 40.0
+offset_bottom = 52.0
+texture = SubResource("AtlasTexture_6cv0u")
+
+[node name="LeftButton" type="TextureButton" parent="Left" groups=["DirectionButtons"]]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
+
+[node name="Up" type="TextureRect" parent="."]
+offset_left = 44.0
+offset_top = 16.0
+offset_right = 60.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_r5nbx")
+
+[node name="UpButton" type="TextureButton" parent="Up" groups=["DirectionButtons"]]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
+
+[node name="Right" type="TextureRect" parent="."]
+offset_left = 64.0
+offset_top = 36.0
+offset_right = 80.0
+offset_bottom = 52.0
+texture = SubResource("AtlasTexture_x5x6t")
+
+[node name="RightButton" type="TextureButton" parent="Right" groups=["DirectionButtons"]]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
+
+[node name="Down" type="TextureRect" parent="."]
+offset_left = 44.0
+offset_top = 36.0
+offset_right = 60.0
+offset_bottom = 52.0
+texture = SubResource("AtlasTexture_yfe1x")
+
+[node name="DownButton" type="TextureButton" parent="Down" groups=["DirectionButtons"]]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+mouse_default_cursor_shape = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gm7y8")
+}
+
+[node name="ForceSlider" type="HSlider" parent="."]
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 85.0
+offset_bottom = 96.0
+scale = Vector2(1.5, 1.5)
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
+max_value = 10000.0
+step = 25.0
+value = 1000.0
+
+[node name="ForceLabel" type="Label" parent="ForceSlider"]
+layout_mode = 0
+offset_left = -34.6667
+offset_top = -7.33333
+offset_right = 104.333
+offset_bottom = 9.6667
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(69, 8)
+theme = SubResource("Theme_ok0kl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.207843, 0.164706, 0.764706)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 6
+text = "Force : 1000"
+horizontal_alignment = 1
+
+[node name="ImpulseSlider" type="HSlider" parent="."]
+offset_left = 16.0
+offset_top = 104.0
+offset_right = 85.0
+offset_bottom = 120.0
+scale = Vector2(1.5, 1.5)
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
+max_value = 3000.0
+step = 25.0
+value = 550.0
+
+[node name="ImpulseLabel" type="Label" parent="ImpulseSlider"]
+layout_mode = 0
+offset_left = -34.6667
+offset_top = -7.33334
+offset_right = 104.333
+offset_bottom = 9.66669
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(69, 8)
+theme = SubResource("Theme_ok0kl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.207843, 0.164706, 0.764706)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 6
+text = "Impulse : 500"
+horizontal_alignment = 1
+
+[node name="ResetButton" type="TextureButton" parent="."]
+offset_left = 98.0
+offset_top = 36.0
+offset_right = 112.0
+offset_bottom = 52.0
+mouse_default_cursor_shape = 2
+texture_normal = SubResource("AtlasTexture_pmimn")
+texture_pressed = SubResource("AtlasTexture_riag1")
+texture_hover = SubResource("AtlasTexture_1x64f")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+offset_left = 16.0
+offset_top = 128.0
+offset_right = 120.0
+offset_bottom = 152.0
+
+[connection signal="pressed" from="SpaceBar/SpaceBarButton" to="." method="_on_space_bar_button_pressed"]
+[connection signal="value_changed" from="ForceSlider" to="." method="_on_force_slider_value_changed"]
+[connection signal="value_changed" from="ImpulseSlider" to="." method="_on_impulse_slider_value_changed"]
+[connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]

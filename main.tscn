@@ -1,34 +1,35 @@
-[gd_scene load_steps=28 format=3 uid="uid://c5t1sm5ucreyj"]
+[gd_scene load_steps=27 format=3 uid="uid://c2lhoe37834gr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1kofh"]
-[ext_resource type="PackedScene" uid="uid://cq1q0xlwbj4pg" path="res://brick.tscn" id="1_shw2f"]
-[ext_resource type="PackedScene" uid="uid://26svmo1nq6vv" path="res://ui.tscn" id="2_p41du"]
-[ext_resource type="PackedScene" uid="uid://t7vjk282t803" path="res://shell.tscn" id="2_tg51j"]
+[ext_resource type="PackedScene" uid="uid://dtc60ewnirmg2" path="res://UI/ui.tscn" id="2_3khqp"]
+[ext_resource type="PackedScene" uid="uid://dps3t1v6spm8u" path="res://Shell/shell.tscn" id="2_tg51j"]
 [ext_resource type="Texture2D" uid="uid://didbrs7fq4bjm" path="res://Assets/sky-1.png" id="4_a0nit"]
+[ext_resource type="PackedScene" uid="uid://cq1q0xlwbj4pg" path="res://Environment/brick.tscn" id="5_lykau"]
 [ext_resource type="Texture2D" uid="uid://umk7c1tnddch" path="res://Assets/background-2.png" id="5_sr14d"]
-[ext_resource type="Script" path="res://Background.gd" id="8_lwl3j"]
-[ext_resource type="Shader" path="res://shell.gdshader" id="8_q5aih"]
+[ext_resource type="Texture2D" uid="uid://hubhhtk6pflc" path="res://Assets/brick2.png" id="7_7tlsr"]
+[ext_resource type="Script" path="res://Environment/Background.gd" id="8_lwl3j"]
+[ext_resource type="Shader" path="res://Shell/shell.gdshader" id="8_q5aih"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_15rgt"]
-load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0743"]
+resource_local_to_scene = true
+size = Vector2(592, 106.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f6ey8"]
-size = Vector2(927, 137)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjh7y"]
+resource_local_to_scene = true
+size = Vector2(592, 98.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0sg3"]
-size = Vector2(602, 174)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wffy3"]
+resource_local_to_scene = true
+size = Vector2(824, 146.5)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sok3r"]
-load_path = "res://.godot/imported/brick2.png-fd76334879797059fdcdd7973841ad66.ctex"
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obphv"]
+resource_local_to_scene = true
+size = Vector2(824, 109.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_glvkw"]
-size = Vector2(42, 24.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao0nk"]
-size = Vector2(604, 157)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vi8ot"]
-size = Vector2(926, 149)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6abib"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cd8e1"]
 resource_local_to_scene = true
@@ -70,7 +71,7 @@ resource_local_to_scene = true
 shader = ExtResource("8_q5aih")
 shader_parameter/new_color = Color(0, 1, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq6yv"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ie8kc"]
 resource_local_to_scene = true
 shader = ExtResource("8_q5aih")
 shader_parameter/new_color = Color(0, 1, 0, 1)
@@ -93,21 +94,21 @@ shader_parameter/new_color = Color(0, 1, 0, 1)
 [node name="Main" type="Node2D"]
 script = ExtResource("1_1kofh")
 
-[node name="UI" parent="." instance=ExtResource("2_p41du")]
+[node name="UI" parent="." instance=ExtResource("2_3khqp")]
 
 [node name="Bounds" type="Node2D" parent="."]
 
-[node name="Backround" type="Node2D" parent="Bounds"]
+[node name="Background" type="Node2D" parent="Bounds"]
 script = ExtResource("8_lwl3j")
 
-[node name="Sky" type="TextureRect" parent="Bounds/Backround"]
+[node name="Sky" type="TextureRect" parent="Bounds/Background"]
 texture_repeat = 3
 offset_right = 800.0
 offset_bottom = 300.0
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("4_a0nit")
 
-[node name="Skyline" type="TextureRect" parent="Bounds/Backround"]
+[node name="Skyline" type="TextureRect" parent="Bounds/Background"]
 texture_repeat = 3
 offset_top = -83.0
 offset_right = 853.0
@@ -115,229 +116,213 @@ offset_bottom = 551.0
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_sr14d")
 
-[node name="Brick" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(21, 10.5)
-
-[node name="Brick53" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(281, 219)
-
-[node name="Brick54" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(323, 219)
-
-[node name="Brick55" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(365, 219)
-
-[node name="Brick56" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(407, 219)
-
-[node name="Brick49" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(249, 10.5)
-
-[node name="Sprite2D" parent="Bounds/Brick49" index="0"]
-texture = SubResource("CompressedTexture2D_15rgt")
-
-[node name="CollisionShape2D" parent="Bounds/Brick49" index="1"]
-position = Vector2(61.5, -58)
-shape = SubResource("RectangleShape2D_f6ey8")
-
-[node name="Brick2" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(63, 10.5)
-
-[node name="Brick3" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(105, 10.5)
-
-[node name="Brick4" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(147, 10.5)
-
-[node name="Brick5" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(189, 10.5)
-
-[node name="Brick6" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(231, 10.5)
-
-[node name="Brick7" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(273, 10.5)
-
-[node name="Brick33" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 42)
+[node name="LargeCollisionLeftBrick4" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 157.5)
 rotation = 1.5708
 
-[node name="Brick34" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 84)
+[node name="CollisionShape2D" parent="Bounds/LargeCollisionLeftBrick4" index="1"]
+position = Vector2(2.5, 42.75)
+shape = SubResource("RectangleShape2D_q0743")
+
+[node name="LargeCollisionRightBrick12" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 157.5)
 rotation = 1.5708
 
-[node name="Brick35" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 126)
+[node name="CollisionShape2D" parent="Bounds/LargeCollisionRightBrick12" index="1"]
+position = Vector2(2.5, -38.75)
+shape = SubResource("RectangleShape2D_qjh7y")
+
+[node name="LargeCollisionTopBrick8" type="StaticBody2D" parent="Bounds"]
+position = Vector2(315, 0)
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Bounds/LargeCollisionTopBrick8"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_7tlsr")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bounds/LargeCollisionTopBrick8"]
+position = Vector2(1, -62.75)
+shape = SubResource("RectangleShape2D_wffy3")
+
+[node name="LargeCollisionBottomBrick24" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(294, 357)
+
+[node name="CollisionShape2D" parent="Bounds/LargeCollisionBottomBrick24" index="1"]
+position = Vector2(22, 44.25)
+shape = SubResource("RectangleShape2D_obphv")
+
+[node name="LeftBrick" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 31.5)
 rotation = 1.5708
 
-[node name="Brick36" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 168)
+[node name="LeftBrick2" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 73.5)
 rotation = 1.5708
 
-[node name="Brick50" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 168)
+[node name="LeftBrick3" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 115.5)
 rotation = 1.5708
 
-[node name="CollisionShape2D" parent="Bounds/Brick50" index="1"]
-position = Vector2(18, 76.5)
-shape = SubResource("RectangleShape2D_k0sg3")
-
-[node name="Brick37" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 294)
+[node name="LeftBrick5" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 199.5)
 rotation = 1.5708
 
-[node name="Brick40" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(0, 329)
-
-[node name="Sprite2D" parent="Bounds/Brick40" index="0"]
-position = Vector2(0, -1.75)
-scale = Vector2(0.5, 0.583333)
-texture = SubResource("CompressedTexture2D_sok3r")
-
-[node name="CollisionShape2D" parent="Bounds/Brick40" index="1"]
-position = Vector2(0, -1.75)
-shape = SubResource("RectangleShape2D_glvkw")
-
-[node name="Brick38" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 210)
+[node name="LeftBrick6" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 241.5)
 rotation = 1.5708
 
-[node name="Brick39" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(10.5, 252)
+[node name="LeftBrick7" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 283.5)
 rotation = 1.5708
 
-[node name="Brick41" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 42)
+[node name="LeftBrick8" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 325.5)
 rotation = 1.5708
 
-[node name="Brick42" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 84)
+[node name="RightBrick9" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 31.5)
 rotation = 1.5708
 
-[node name="Brick43" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 126)
+[node name="RightBrick10" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 73.5)
 rotation = 1.5708
 
-[node name="Brick51" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 126)
+[node name="RightBrick11" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 115.5)
 rotation = 1.5708
 
-[node name="CollisionShape2D" parent="Bounds/Brick51" index="1"]
-position = Vector2(60, -68.0001)
-shape = SubResource("RectangleShape2D_ao0nk")
-
-[node name="Brick44" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 168)
+[node name="RightBrick13" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 199.5)
 rotation = 1.5708
 
-[node name="Brick45" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 294)
+[node name="RightBrick14" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 241.5)
 rotation = 1.5708
 
-[node name="Brick46" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(640, 329)
-
-[node name="Sprite2D" parent="Bounds/Brick46" index="0"]
-position = Vector2(0, -1.75)
-scale = Vector2(0.5, 0.583333)
-texture = SubResource("CompressedTexture2D_sok3r")
-
-[node name="CollisionShape2D" parent="Bounds/Brick46" index="1"]
-position = Vector2(0, -1.75)
-shape = SubResource("RectangleShape2D_glvkw")
-
-[node name="Brick47" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 210)
+[node name="RightBrick15" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 283.5)
 rotation = 1.5708
 
-[node name="Brick48" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(629.5, 252)
+[node name="RightBrick16" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(640, 325.5)
 rotation = 1.5708
 
-[node name="Brick8" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(315, 10.5)
+[node name="TopBrick" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(21, 0)
 
-[node name="Brick9" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(357, 10.5)
+[node name="TopBrick2" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(63, 0)
 
-[node name="Brick10" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(399, 10.5)
+[node name="TopBrick3" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(105, 0)
 
-[node name="Brick11" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(441, 10.5)
+[node name="TopBrick4" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(147, 0)
 
-[node name="Brick12" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(483, 10.5)
+[node name="TopBrick5" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(189, 0)
 
-[node name="Brick13" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(525, 10.5)
+[node name="TopBrick6" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(231, 0)
 
-[node name="Brick14" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(567, 10.5)
+[node name="TopBrick7" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(273, 0)
 
-[node name="Brick15" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(609, 10.5)
+[node name="TopBrick9" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(357, 0)
 
-[node name="Brick16" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(651, 10.5)
+[node name="TopBrick10" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(399, 0)
 
-[node name="Brick17" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(21, 350)
+[node name="TopBrick11" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(441, 0)
 
-[node name="Brick18" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(63, 350)
+[node name="TopBrick12" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(483, 0)
 
-[node name="Brick19" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(105, 350)
+[node name="TopBrick13" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(525, 0)
 
-[node name="Brick20" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(147, 350)
+[node name="TopBrick14" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(567, 0)
 
-[node name="Brick21" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(189, 350)
+[node name="TopBrick15" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(609, 0)
 
-[node name="Brick22" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(231, 350)
+[node name="TopBrick16" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(651, 0)
 
-[node name="Brick23" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(273, 350)
+[node name="BottomBrick17" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(0, 357)
 
-[node name="Brick52" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(273, 350)
+[node name="BottomBrick18" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(42, 357)
 
-[node name="CollisionShape2D" parent="Bounds/Brick52" index="1"]
-position = Vector2(38, 63.5)
-shape = SubResource("RectangleShape2D_vi8ot")
+[node name="BottomBrick19" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(84, 357)
 
-[node name="Brick24" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(315, 350)
+[node name="BottomBrick20" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(126, 357)
 
-[node name="Brick25" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(357, 350)
+[node name="BottomBrick21" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(168, 357)
 
-[node name="Brick26" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(399, 350)
+[node name="BottomBrick22" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(210, 357)
 
-[node name="Brick27" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(441, 350)
+[node name="BottomBrick23" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(252, 357)
 
-[node name="Brick28" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(483, 350)
+[node name="BottomBrick25" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(336, 357)
 
-[node name="Brick29" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(525, 350)
+[node name="BottomBrick26" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(378, 357)
 
-[node name="Brick30" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(567, 350)
+[node name="BottomBrick27" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(420, 357)
 
-[node name="Brick31" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(609, 350)
+[node name="BottomBrick28" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(462, 357)
 
-[node name="Brick32" parent="Bounds" instance=ExtResource("1_shw2f")]
-position = Vector2(651, 350)
+[node name="BottomBrick29" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(504, 357)
+
+[node name="BottomBrick30" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(546, 357)
+
+[node name="BottomBrick31" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(588, 357)
+
+[node name="BottomBrick32" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(630, 357)
+
+[node name="MiddleBrick" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(281, 229)
+
+[node name="MiddleBrick2" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(323, 229)
+
+[node name="MiddleBrick3" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(365, 229)
+
+[node name="MiddleBrick4" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(407, 229)
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="Not Pickable" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(368, 123)
+
+[node name="Shell" parent="Not Pickable" index="1"]
+input_pickable = false
+
+[node name="Sprite" parent="Not Pickable/Shell" index="0"]
+material = SubResource("ShaderMaterial_6abib")
 
 [node name="Freeze Static" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(580, 49)
+position = Vector2(588, 39)
 
 [node name="Shell" parent="Freeze Static" index="1"]
 freeze = true
@@ -348,7 +333,7 @@ ignore_unfreeze = true
 material = SubResource("ShaderMaterial_cd8e1")
 
 [node name="Freeze Kinematic" parent="." instance=ExtResource("2_tg51j")]
-position = Vector2(580, 85)
+position = Vector2(588, 75)
 
 [node name="Shell" parent="Freeze Kinematic" index="1"]
 freeze = true
@@ -417,8 +402,14 @@ material = SubResource("ShaderMaterial_5yeil")
 [node name="Switch Force Offset" parent="." instance=ExtResource("2_tg51j")]
 position = Vector2(344, 169)
 
-[node name="Sprite" parent="Switch Force Offset/Shell" index="0"]
-material = SubResource("ShaderMaterial_vq6yv")
+[node name="Switch Torque" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(344, 123)
+
+[node name="Shell" parent="Switch Torque" index="1"]
+constant_torque = 1000.0
+
+[node name="Sprite" parent="Switch Torque/Shell" index="0"]
+material = SubResource("ShaderMaterial_ie8kc")
 
 [node name="No Gravity" parent="." instance=ExtResource("2_tg51j")]
 position = Vector2(308, 145)
@@ -454,12 +445,10 @@ position = Vector2(380, 145)
 [node name="Torque Impulse" parent="." instance=ExtResource("2_tg51j")]
 position = Vector2(380, 193)
 
-[editable path="Bounds/Brick49"]
-[editable path="Bounds/Brick50"]
-[editable path="Bounds/Brick40"]
-[editable path="Bounds/Brick51"]
-[editable path="Bounds/Brick46"]
-[editable path="Bounds/Brick52"]
+[editable path="Bounds/LargeCollisionLeftBrick4"]
+[editable path="Bounds/LargeCollisionRightBrick12"]
+[editable path="Bounds/LargeCollisionBottomBrick24"]
+[editable path="Not Pickable"]
 [editable path="Freeze Static"]
 [editable path="Freeze Kinematic"]
 [editable path="Very Heavy"]
@@ -468,7 +457,7 @@ position = Vector2(380, 193)
 [editable path="Force Up Left"]
 [editable path="Force AntiGrav"]
 [editable path="Switch Central Force"]
-[editable path="Switch Force Offset"]
+[editable path="Switch Torque"]
 [editable path="No Gravity"]
 [editable path="Torque"]
 [editable path="Torque No Grav"]

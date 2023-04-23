@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=3 uid="uid://dps3t1v6spm8u"]
+
+[ext_resource type="Script" path="res://Shell/shell_container.gd" id="1_waobp"]
+[ext_resource type="Theme" uid="uid://b0yna1pxvt1d7" path="res://UI/theme.tres" id="2_w3l7x"]
+[ext_resource type="Script" path="res://Shell/shell.gd" id="3_rbrpm"]
+[ext_resource type="Shader" path="res://Shell/shell.gdshader" id="4_75qil"]
+[ext_resource type="Texture2D" uid="uid://bcrtg2evtb0uf" path="res://Assets/shell.png" id="5_hgjv2"]
+[ext_resource type="Texture2D" uid="uid://bbaiq4g0h3xhd" path="res://Assets/pixel.png" id="6_wb3bw"]
+[ext_resource type="AudioStream" uid="uid://lcxdlxijo3ec" path="res://Assets/sound2.wav" id="7_sjvbu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apmci"]
+resource_local_to_scene = true
+shader = ExtResource("4_75qil")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kqm7m"]
+radius = 7.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_k5bks"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qiocg"]
+resource_name = "spin"
+length = 0.6
+loop_mode = 1
+step = 0.075
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.075, 0.15, 0.225, 0.3, 0.375, 0.45, 0.525),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4rsql"]
+_data = {
+"RESET": SubResource("Animation_k5bks"),
+"spin": SubResource("Animation_qiocg")
+}
+
+[sub_resource type="Curve" id="Curve_20p1d"]
+_data = [Vector2(0, 0.636364), 0.0, 0.0, 0, 0, Vector2(0.23348, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_1uko8"]
+curve = SubResource("Curve_20p1d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_t0lnq"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 150.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -200.0
+linear_accel_max = -150.0
+damping_min = 150.0
+damping_max = 220.0
+angle_min = 360.0
+angle_max = 720.0
+scale_min = 2.0
+scale_max = 3.0
+scale_curve = SubResource("CurveTexture_1uko8")
+color = Color(0.286275, 0.788235, 0.258824, 1)
+hue_variation_min = -0.33
+hue_variation_max = 0.39
+
+[node name="ShellContainer" type="Node2D"]
+script = ExtResource("1_waobp")
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = -22.0
+offset_right = 92.0
+offset_bottom = -5.0
+grow_horizontal = 2
+scale = Vector2(0.85, 0.85)
+theme = ExtResource("2_w3l7x")
+text = "PlaceholderShellText"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Shell" type="RigidBody2D" parent="." groups=["shells"]]
+collision_layer = 2
+collision_mask = 3
+input_pickable = true
+max_contacts_reported = 5
+contact_monitor = true
+freeze_mode = 1
+script = ExtResource("3_rbrpm")
+
+[node name="Sprite" type="Sprite2D" parent="Shell"]
+material = SubResource("ShaderMaterial_apmci")
+texture = ExtResource("5_hgjv2")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shell"]
+visible = false
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_kqm7m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Shell"]
+autoplay = "spin"
+libraries = {
+"": SubResource("AnimationLibrary_4rsql")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Shell"]
+show_behind_parent = true
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_t0lnq")
+texture = ExtResource("6_wb3bw")
+lifetime = 0.5
+one_shot = true
+preprocess = 0.03
+explosiveness = 0.8
+randomness = 0.6
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Shell"]
+stream = ExtResource("7_sjvbu")
+volume_db = -10.0
+
+[node name="Ghost" type="TextureRect" parent="Shell"]
+offset_left = -9.0
+offset_top = -7.0
+offset_right = 9.0
+offset_bottom = 7.0
+pivot_offset = Vector2(9, 7)
+
+[connection signal="body_entered" from="Shell" to="Shell" method="_on_body_entered"]

@@ -63,6 +63,7 @@ down={
 
 [physics]
 
+common/physics_ticks_per_second=120
 2d/sleep_threshold_linear=2.1
 2d/sleep_threshold_angular=0.3
 
