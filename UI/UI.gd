@@ -6,6 +6,7 @@ signal reset_button_pressed
 signal spacebar_button_pressed
 signal dir_button_pressed(dir: String)
 signal dir_button_released
+signal area_selected(area: int)
 
 var key_states: Dictionary = {
 	"left": false,
@@ -20,6 +21,7 @@ var key_states: Dictionary = {
 @onready var impulse_slider: HSlider = $ImpulseSlider
 @onready var impulse_label: Label = $ImpulseSlider/ImpulseLabel
 @onready var reset_button: TextureButton = $ResetButton
+@onready var area_option_button: OptionButton = $AreaOptionButton
 
 #### BUILT-IN ####
 
@@ -57,8 +59,12 @@ func _pop_label(label: Label, time: float) -> void:
 	tween.parallel().tween_property(label, "theme_override_colors/font_color", Color.WHITE, time * 3 / 4)
 	
 	await tween.finished
-	if key_states.values().has(true):
+	tween.kill()
+	if key_states.values().has(true) and label.name == "ForceLabel":
 		_pop_label(label, time)
+
+func populate_area_option_button(key: String) -> void:
+	area_option_button.add_item(key)
 
 #### INPUTS ####
 
@@ -79,15 +85,15 @@ func _input(event: InputEvent) -> void:
 #### SIGNAL RESPONSES ####
 
 func _on_direction_button_down(dir: String) -> void:
+	key_states[dir] = true
 	animation_player.play("press_" + dir)
 	dir_button_pressed.emit(dir)
-	key_states[dir] = true
 	_pop_label(force_label, 1.0)
 
 func _on_direction_button_up(dir: String) -> void:
+	key_states[dir] = false
 	animation_player.play_backwards("press_" + dir)
 	dir_button_released.emit()
-	key_states[dir] = false
 	
 func _on_reset_button_pressed() -> void:
 	reset_button_pressed.emit()
@@ -108,4 +114,5 @@ func _on_impulse_slider_value_changed(impulse: float) -> void:
 	impulse_changed.emit(impulse)
 	impulse_slider.release_focus()
 
-
+func _on_area_option_button_item_selected(index: int) -> void:
+	area_selected.emit(index)

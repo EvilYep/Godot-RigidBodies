@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1kfkw68g3s1f"]
+
+[ext_resource type="Material" uid="uid://bdf02p5chj3k1" path="res://Areas/inverse_grav_pad.tres" id="2_ya8b8"]
+[ext_resource type="Texture2D" uid="uid://dj7dgwvyakf5j" path="res://Assets/target_12.png" id="3_yqtfp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4oy5"]
+size = Vector2(54, 208)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_je053"]
+load_path = "res://.godot/imported/AntigravPod.png-816c9aa5acf0286cd8805e72995c29f9.ctex"
+
+[node name="InverseGravPad" type="Area2D" groups=["areas"]]
+collision_layer = 4
+collision_mask = 2
+priority = 1.0
+gravity_space_override = 1
+gravity_point_center = Vector2(0, -2)
+gravity_direction = Vector2(0, -2)
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, -104)
+shape = SubResource("RectangleShape2D_y4oy5")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+modulate = Color(1, 0.694118, 1, 1)
+position = Vector2(0, -15)
+texture = SubResource("CompressedTexture2D_je053")
+
+[node name="Particles" type="GPUParticles2D" parent="."]
+show_behind_parent = true
+amount = 9
+process_material = ExtResource("2_ya8b8")
+texture = ExtResource("3_yqtfp")
+lifetime = 2.2
+preprocess = 0.31
+randomness = 1.0

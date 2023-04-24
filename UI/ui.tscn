@@ -206,67 +206,71 @@ script = ExtResource("1_yv5o3")
 
 [node name="SpaceBar" type="TextureRect" parent="."]
 offset_left = 16.0
-offset_top = 56.0
+offset_top = 79.0
 offset_right = 120.0
-offset_bottom = 72.0
+offset_bottom = 95.0
 texture = SubResource("AtlasTexture_2s20n")
 
 [node name="SpaceBarButton" type="TextureButton" parent="SpaceBar"]
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 16.0
-mouse_default_cursor_shape = 2
+focus_mode = 0
 
 [node name="Left" type="TextureRect" parent="."]
 offset_left = 24.0
-offset_top = 36.0
+offset_top = 59.0
 offset_right = 40.0
-offset_bottom = 52.0
+offset_bottom = 75.0
 texture = SubResource("AtlasTexture_6cv0u")
 
 [node name="LeftButton" type="TextureButton" parent="Left" groups=["DirectionButtons"]]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 
 [node name="Up" type="TextureRect" parent="."]
 offset_left = 44.0
-offset_top = 16.0
+offset_top = 39.0
 offset_right = 60.0
-offset_bottom = 32.0
+offset_bottom = 55.0
 texture = SubResource("AtlasTexture_r5nbx")
 
 [node name="UpButton" type="TextureButton" parent="Up" groups=["DirectionButtons"]]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 
 [node name="Right" type="TextureRect" parent="."]
 offset_left = 64.0
-offset_top = 36.0
+offset_top = 59.0
 offset_right = 80.0
-offset_bottom = 52.0
+offset_bottom = 75.0
 texture = SubResource("AtlasTexture_x5x6t")
 
 [node name="RightButton" type="TextureButton" parent="Right" groups=["DirectionButtons"]]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 
 [node name="Down" type="TextureRect" parent="."]
 offset_left = 44.0
-offset_top = 36.0
+offset_top = 59.0
 offset_right = 60.0
-offset_bottom = 52.0
+offset_bottom = 75.0
 texture = SubResource("AtlasTexture_yfe1x")
 
 [node name="DownButton" type="TextureButton" parent="Down" groups=["DirectionButtons"]]
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+focus_mode = 0
 mouse_default_cursor_shape = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -276,9 +280,9 @@ libraries = {
 
 [node name="ForceSlider" type="HSlider" parent="."]
 offset_left = 16.0
-offset_top = 80.0
+offset_top = 103.0
 offset_right = 85.0
-offset_bottom = 96.0
+offset_bottom = 119.0
 scale = Vector2(1.5, 1.5)
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_5u0s4")
@@ -305,9 +309,9 @@ horizontal_alignment = 1
 
 [node name="ImpulseSlider" type="HSlider" parent="."]
 offset_left = 16.0
-offset_top = 104.0
+offset_top = 127.0
 offset_right = 85.0
-offset_bottom = 120.0
+offset_bottom = 143.0
 scale = Vector2(1.5, 1.5)
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_5u0s4")
@@ -334,21 +338,27 @@ horizontal_alignment = 1
 
 [node name="ResetButton" type="TextureButton" parent="."]
 offset_left = 98.0
-offset_top = 36.0
+offset_top = 59.0
 offset_right = 112.0
-offset_bottom = 52.0
+offset_bottom = 75.0
 mouse_default_cursor_shape = 2
 texture_normal = SubResource("AtlasTexture_pmimn")
 texture_pressed = SubResource("AtlasTexture_riag1")
 texture_hover = SubResource("AtlasTexture_1x64f")
 
-[node name="OptionButton" type="OptionButton" parent="."]
+[node name="AreaOptionButton" type="OptionButton" parent="."]
+texture_filter = 1
 offset_left = 16.0
-offset_top = 128.0
-offset_right = 120.0
-offset_bottom = 152.0
+offset_top = 16.0
+offset_right = 155.0
+offset_bottom = 36.0
+scale = Vector2(0.75, 0.75)
+focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [connection signal="pressed" from="SpaceBar/SpaceBarButton" to="." method="_on_space_bar_button_pressed"]
 [connection signal="value_changed" from="ForceSlider" to="." method="_on_force_slider_value_changed"]
 [connection signal="value_changed" from="ImpulseSlider" to="." method="_on_impulse_slider_value_changed"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="item_selected" from="AreaOptionButton" to="." method="_on_area_option_button_item_selected"]

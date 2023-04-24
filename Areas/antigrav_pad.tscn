@@ -1,35 +1,19 @@
-[gd_scene load_steps=7 format=3 uid="uid://djnmayse5fvq2"]
+[gd_scene load_steps=5 format=3 uid="uid://djnmayse5fvq2"]
 
 [ext_resource type="Texture2D" uid="uid://8mmbmsc82jlq" path="res://Assets/AntigravPod.png" id="1_ekst2"]
+[ext_resource type="Material" uid="uid://c0145y3jle56i" path="res://Areas/antigrav_pad.tres" id="2_2b431"]
 [ext_resource type="Texture2D" uid="uid://dj7dgwvyakf5j" path="res://Assets/target_12.png" id="2_30kis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4oy5"]
 size = Vector2(54, 208)
 
-[sub_resource type="Gradient" id="Gradient_ujd28"]
-offsets = PackedFloat32Array(0, 0.863469, 1)
-colors = PackedColorArray(0, 5, 5, 1, 0, 2, 2, 1, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_hk8vf"]
-gradient = SubResource("Gradient_ujd28")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pslym"]
-lifetime_randomness = 0.04
-particle_flag_disable_z = true
-gravity = Vector3(0, -98, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_min = 0.15
-scale_max = 0.15
-color = Color(0, 3, 3, 1)
-color_ramp = SubResource("GradientTexture1D_hk8vf")
-hue_variation_min = -0.05
-hue_variation_max = 0.05
-turbulence_noise_strength = 0.86
-turbulence_noise_scale = 1.7
-turbulence_noise_speed = Vector3(1, 0.15, 0)
-
 [node name="AntigravPad" type="Area2D" groups=["areas"]]
+collision_layer = 4
+collision_mask = 2
+priority = 1.0
+gravity_space_override = 1
+gravity_point_center = Vector2(0, -1)
+gravity_direction = Vector2(0, -1)
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 position = Vector2(0, -104)
@@ -40,10 +24,10 @@ position = Vector2(0, -15)
 texture = ExtResource("1_ekst2")
 
 [node name="Particles" type="GPUParticles2D" parent="."]
+show_behind_parent = true
 amount = 9
-process_material = SubResource("ParticleProcessMaterial_pslym")
+process_material = ExtResource("2_2b431")
 texture = ExtResource("2_30kis")
-lifetime = 2.0
+lifetime = 2.2
 preprocess = 0.31
-trail_enabled = true
-trail_lifetime = 0.1
+randomness = 1.0

@@ -3,6 +3,7 @@ extends Node2D
 enum Area {
 	NONE,
 	ANTIGRAV_PAD,
+	INVERSE_GRAV_PAD
 }
 
 var directions: Dictionary = {
@@ -16,8 +17,9 @@ var directions: Dictionary = {
 var shells: Array[Shell]
 var selected_area: Area = Area.NONE:
 	set(_area):
+		var old_area = selected_area
 		selected_area = _area
-		_change_selected_area(selected_area)
+		_change_selected_area(old_area, selected_area)
 var direction := Vector2.ZERO
 var impulse: int = 500
 var force: int = 1000:
@@ -29,7 +31,6 @@ var dir_button_pressed := false
 
 @onready var ui: CanvasLayer = $UI
 @onready var areas: Node2D = $Areas
-@onready var antigrav_pad_scene: PackedScene = preload("res://Areas/antigrav_pad.tscn")
 
 #### BUILT-IN ####
 
@@ -106,14 +107,19 @@ func _reset_direction() -> void:
 	dir_button_pressed = false
 	direction = Vector2.ZERO
 
-func _change_selected_area(new_selected_area: Area) -> void:
-	match new_selected_area:
-		Area.NONE:
-			get_tree().get_first_node_in_group("areas").queue_free()
-		Area.ANTIGRAV_PAD:
-			var antigrav_pad = antigrav_pad_scene.instantiate()
-			antigrav_pad.position = Vector2(110, 339.5)
-			areas.add_child(antigrav_pad)
+func _change_selected_area(old_selected_area: Area, new_selected_area: Area) -> void:
+	if old_selected_area != Area.NONE:
+		var old_area: Area2D = get_tree().get_first_node_in_group("areas")
+		old_area.gravity_space_override = Area2D.SPACE_OVERRIDE_DISABLED
+		old_area.angular_damp_space_override = Area2D.SPACE_OVERRIDE_DISABLED
+		old_area.linear_damp_space_override = Area2D.SPACE_OVERRIDE_DISABLED
+		old_area.queue_free()
+		
+	var area_name = Area.find_key(new_selected_area).to_lower()
+	if area_name.contains("pad"):
+		var pad: Area2D = load("res://Areas/" + area_name + ".tscn").instantiate()
+		pad.position = Vector2(110, 346.5)
+		areas.add_child(pad) 
 
 func _connect_ui() -> void:
 	ui.force_changed.connect(func(f): force = f)
@@ -122,6 +128,10 @@ func _connect_ui() -> void:
 	ui.spacebar_button_pressed.connect(_apply_impulse)
 	ui.dir_button_pressed.connect(_apply_direction)
 	ui.dir_button_released.connect(_reset_direction)
+	for area in Area:
+		#ui.populate_area_option_button(area.to_lower().replace("_", " ").capitalize(), Area.get(area))
+		ui.populate_area_option_button(area.to_lower().replace("_", " ").capitalize())
+	ui.area_selected.connect(_on_selected_area_changed)
 
 #### INPUTS ####
 
@@ -129,7 +139,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 	if event.is_action_pressed("reset"):
 		_reset_shells_position()
 		ui.press_reset_button()
-	
 	
 	if event.keycode in [Key.KEY_LEFT, Key.KEY_UP, Key.KEY_RIGHT, Key.KEY_DOWN]:
 		# using event.is_action_pressed instead of Input would result in the key considered being released afer a few secs even if still pressed
@@ -145,3 +154,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 		_apply_impulse()
 
 #### SIGNAL RESPONSES ####
+
+func _on_selected_area_changed(_area: Area) -> void:
+	selected_area = _area

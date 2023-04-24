@@ -307,6 +307,15 @@ position = Vector2(323, 229)
 [node name="MiddleBrick3" parent="Bounds" instance=ExtResource("5_lykau")]
 position = Vector2(365, 229)
 
+[node name="MiddleBrick5" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(31.5, 229)
+
+[node name="MiddleBrick6" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(197, 229)
+
+[node name="MiddleBrick7" parent="Bounds" instance=ExtResource("5_lykau")]
+position = Vector2(239, 229)
+
 [node name="MiddleBrick4" parent="Bounds" instance=ExtResource("5_lykau")]
 position = Vector2(407, 229)
 

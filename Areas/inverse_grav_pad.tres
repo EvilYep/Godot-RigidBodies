@@ -1,0 +1,36 @@
+[gd_resource type="ParticleProcessMaterial" load_steps=6 format=3 uid="uid://bdf02p5chj3k1"]
+
+[sub_resource type="Gradient" id="Gradient_ujd28"]
+offsets = PackedFloat32Array(0, 0.815094, 1)
+colors = PackedColorArray(3, 0, 5, 1, 2, 0, 3, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hk8vf"]
+gradient = SubResource("Gradient_ujd28")
+
+[sub_resource type="Curve" id="Curve_7qfpa"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_5ov5s"]
+_data = [Vector2(0, 0.290909), 0.0, 0.0, 0, 0, Vector2(1, 0.290909), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_vg3u2"]
+curve_x = SubResource("Curve_7qfpa")
+curve_y = SubResource("Curve_5ov5s")
+
+[resource]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveXYZTexture_vg3u2")
+color = Color(3, 0, 5, 1)
+color_ramp = SubResource("GradientTexture1D_hk8vf")
+hue_variation_min = -0.1
+hue_variation_max = 0.1
+turbulence_noise_strength = 0.86
+turbulence_noise_scale = 1.7
+turbulence_noise_speed = Vector3(0, 0.15, 0)
