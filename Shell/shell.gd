@@ -42,6 +42,9 @@ func _physics_process(_delta: float) -> void:
 
 #### LOGIC ####
 
+func set_anim_speed(speed: float) -> void:
+	animation_player.speed_scale = speed
+
 func _set_random_animation_speed() -> void:
 	animation_player.speed_scale = randf_range(-1.5, 1.5)
 

@@ -3,7 +3,8 @@ extends Node2D
 enum Area {
 	NONE,
 	ANTIGRAV_PAD,
-	INVERSE_GRAV_PAD
+	INVERSE_GRAV_PAD,
+	BLACK_HOLE,
 }
 
 var directions: Dictionary = {
@@ -17,9 +18,11 @@ var directions: Dictionary = {
 var shells: Array[Shell]
 var selected_area: Area = Area.NONE:
 	set(_area):
-		var old_area = selected_area
+		if selected_area != Area.NONE:
+			get_tree().get_first_node_in_group("areas").queue_free()
 		selected_area = _area
-		_change_selected_area(old_area, selected_area)
+		if _area != Area.NONE:
+			_change_selected_area(Area.find_key(selected_area).to_lower())
 var direction := Vector2.ZERO
 var impulse: int = 500
 var force: int = 1000:
@@ -107,19 +110,10 @@ func _reset_direction() -> void:
 	dir_button_pressed = false
 	direction = Vector2.ZERO
 
-func _change_selected_area(old_selected_area: Area, new_selected_area: Area) -> void:
-	if old_selected_area != Area.NONE:
-		var old_area: Area2D = get_tree().get_first_node_in_group("areas")
-		old_area.gravity_space_override = Area2D.SPACE_OVERRIDE_DISABLED
-		old_area.angular_damp_space_override = Area2D.SPACE_OVERRIDE_DISABLED
-		old_area.linear_damp_space_override = Area2D.SPACE_OVERRIDE_DISABLED
-		old_area.queue_free()
-		
-	var area_name = Area.find_key(new_selected_area).to_lower()
-	if area_name.contains("pad"):
-		var pad: Area2D = load("res://Areas/" + area_name + ".tscn").instantiate()
-		pad.position = Vector2(110, 346.5)
-		areas.add_child(pad) 
+func _change_selected_area(new_selected_area: String) -> void:
+	var _area: Area2D = load("res://Areas/" + new_selected_area + ".tscn").instantiate()
+	areas.add_child(_area)
+	_area._force_shell_update()
 
 func _connect_ui() -> void:
 	ui.force_changed.connect(func(f): force = f)

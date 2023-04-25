@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1kfkw68g3s1f"]
+[gd_scene load_steps=6 format=3 uid="uid://d1kfkw68g3s1f"]
 
+[ext_resource type="Script" path="res://Areas/pad.gd" id="1_h7dkp"]
 [ext_resource type="Material" uid="uid://bdf02p5chj3k1" path="res://Areas/inverse_grav_pad.tres" id="2_ya8b8"]
 [ext_resource type="Texture2D" uid="uid://dj7dgwvyakf5j" path="res://Assets/target_12.png" id="3_yqtfp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4oy5"]
-size = Vector2(54, 208)
+size = Vector2(54, 224)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_je053"]
 load_path = "res://.godot/imported/AntigravPod.png-816c9aa5acf0286cd8805e72995c29f9.ctex"
@@ -16,9 +17,10 @@ priority = 1.0
 gravity_space_override = 1
 gravity_point_center = Vector2(0, -2)
 gravity_direction = Vector2(0, -2)
+script = ExtResource("1_h7dkp")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -104)
+position = Vector2(0, -96)
 shape = SubResource("RectangleShape2D_y4oy5")
 
 [node name="Sprite" type="Sprite2D" parent="."]

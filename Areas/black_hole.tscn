@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3idij1mxpagh"]
+
+[ext_resource type="Shader" path="res://Areas/black_hole.gdshader" id="1_a1ysd"]
+[ext_resource type="Script" path="res://Areas/black_hole.gd" id="1_iucct"]
+[ext_resource type="Texture2D" uid="uid://bgdb7ag686rvb" path="res://Assets/Black.png" id="2_fwqv6"]
+[ext_resource type="Texture2D" uid="uid://cyris13vadvir" path="res://Assets/Black32.png" id="3_i0ljp"]
+
+[sub_resource type="Curve" id="Curve_ud4ee"]
+_data = [Vector2(0, 0.490909), 0.0, 0.0, 0, 0, Vector2(0.155319, 0.127273), 0.0, 0.0, 0, 0, Vector2(0.361702, 0.518182), 0.0, 0.0, 0, 0, Vector2(0.497872, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_n3uxr"]
+width = 2048
+curve = SubResource("Curve_ud4ee")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukfy3"]
+shader = ExtResource("1_a1ysd")
+shader_parameter/strength = 0.75
+shader_parameter/pixel_amount = 64
+shader_parameter/curve = SubResource("CurveTexture_n3uxr")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nb7jq"]
+radius = 64.0
+
+[node name="BlackHole" type="Area2D" groups=["areas"]]
+collision_layer = 4
+collision_mask = 2
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 3920.0
+linear_damp_space_override = 1
+linear_damp = 10.0
+script = ExtResource("1_iucct")
+
+[node name="EventHorizon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ukfy3")
+scale = Vector2(4, 4)
+texture = ExtResource("3_i0ljp")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nb7jq")
+
+[node name="Hole" type="Sprite2D" parent="."]
+texture = ExtResource("2_fwqv6")

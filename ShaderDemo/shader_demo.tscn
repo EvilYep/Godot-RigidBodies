@@ -1,0 +1,1212 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsq0lt8omr0t6"]
+
+[ext_resource type="Texture2D" uid="uid://didbrs7fq4bjm" path="res://Assets/sky-1.png" id="1_82xb6"]
+[ext_resource type="Script" path="res://ShaderDemo/shader_demo.gd" id="1_ipodi"]
+[ext_resource type="PackedScene" uid="uid://dps3t1v6spm8u" path="res://Shell/shell.tscn" id="2_23eoj"]
+[ext_resource type="FontFile" uid="uid://cwjdgk64d1rlw" path="res://Assets/Battlenet.ttf" id="4_fc634"]
+
+[node name="ShaderDemo" type="Node2D"]
+script = ExtResource("1_ipodi")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_82xb6")
+
+[node name="Shells" type="Node2D" parent="."]
+
+[node name="ShellContainer" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 17)
+
+[node name="ShellContainer2" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 17)
+
+[node name="ShellContainer3" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 17)
+
+[node name="ShellContainer4" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 17)
+
+[node name="ShellContainer5" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 41)
+
+[node name="ShellContainer6" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 41)
+
+[node name="ShellContainer7" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 41)
+
+[node name="ShellContainer8" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 41)
+
+[node name="ShellContainer9" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 17)
+
+[node name="ShellContainer10" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 17)
+
+[node name="ShellContainer11" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 17)
+
+[node name="ShellContainer12" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 17)
+
+[node name="ShellContainer13" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 41)
+
+[node name="ShellContainer14" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 41)
+
+[node name="ShellContainer15" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 41)
+
+[node name="ShellContainer16" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 41)
+
+[node name="ShellContainer17" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 65)
+
+[node name="ShellContainer18" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 65)
+
+[node name="ShellContainer19" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 65)
+
+[node name="ShellContainer20" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 65)
+
+[node name="ShellContainer21" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 89)
+
+[node name="ShellContainer22" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 89)
+
+[node name="ShellContainer23" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 89)
+
+[node name="ShellContainer24" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 89)
+
+[node name="ShellContainer25" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 65)
+
+[node name="ShellContainer26" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 65)
+
+[node name="ShellContainer27" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 65)
+
+[node name="ShellContainer28" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 65)
+
+[node name="ShellContainer29" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 89)
+
+[node name="ShellContainer30" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 89)
+
+[node name="ShellContainer31" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 89)
+
+[node name="ShellContainer32" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 89)
+
+[node name="ShellContainer33" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 113)
+
+[node name="ShellContainer34" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 113)
+
+[node name="ShellContainer35" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 113)
+
+[node name="ShellContainer36" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 113)
+
+[node name="ShellContainer37" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 137)
+
+[node name="ShellContainer38" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 137)
+
+[node name="ShellContainer39" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 137)
+
+[node name="ShellContainer40" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 137)
+
+[node name="ShellContainer41" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 113)
+
+[node name="ShellContainer42" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 113)
+
+[node name="ShellContainer43" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 113)
+
+[node name="ShellContainer44" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 113)
+
+[node name="ShellContainer45" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 137)
+
+[node name="ShellContainer46" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 137)
+
+[node name="ShellContainer47" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 137)
+
+[node name="ShellContainer48" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 137)
+
+[node name="ShellContainer49" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 17)
+
+[node name="ShellContainer50" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 17)
+
+[node name="ShellContainer51" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 17)
+
+[node name="ShellContainer52" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 17)
+
+[node name="ShellContainer53" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 41)
+
+[node name="ShellContainer54" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 41)
+
+[node name="ShellContainer55" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 41)
+
+[node name="ShellContainer56" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 41)
+
+[node name="ShellContainer57" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 17)
+
+[node name="ShellContainer58" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 17)
+
+[node name="ShellContainer59" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 17)
+
+[node name="ShellContainer60" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 17)
+
+[node name="ShellContainer61" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 41)
+
+[node name="ShellContainer62" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 41)
+
+[node name="ShellContainer63" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 41)
+
+[node name="ShellContainer64" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 41)
+
+[node name="ShellContainer65" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 65)
+
+[node name="ShellContainer66" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 65)
+
+[node name="ShellContainer67" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 65)
+
+[node name="ShellContainer68" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 65)
+
+[node name="ShellContainer69" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 89)
+
+[node name="ShellContainer70" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 89)
+
+[node name="ShellContainer71" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 89)
+
+[node name="ShellContainer72" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 89)
+
+[node name="ShellContainer73" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 65)
+
+[node name="ShellContainer74" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 65)
+
+[node name="ShellContainer75" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 65)
+
+[node name="ShellContainer76" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 65)
+
+[node name="ShellContainer77" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 89)
+
+[node name="ShellContainer78" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 89)
+
+[node name="ShellContainer79" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 89)
+
+[node name="ShellContainer80" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 89)
+
+[node name="ShellContainer81" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 113)
+
+[node name="ShellContainer82" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 113)
+
+[node name="ShellContainer83" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 113)
+
+[node name="ShellContainer84" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 113)
+
+[node name="ShellContainer85" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 137)
+
+[node name="ShellContainer86" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 137)
+
+[node name="ShellContainer87" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 137)
+
+[node name="ShellContainer88" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 137)
+
+[node name="ShellContainer89" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 113)
+
+[node name="ShellContainer90" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 113)
+
+[node name="ShellContainer91" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 113)
+
+[node name="ShellContainer92" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 113)
+
+[node name="ShellContainer93" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 137)
+
+[node name="ShellContainer94" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 137)
+
+[node name="ShellContainer95" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 137)
+
+[node name="ShellContainer96" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 137)
+
+[node name="ShellContainer97" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 17)
+
+[node name="ShellContainer98" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 17)
+
+[node name="ShellContainer99" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 17)
+
+[node name="ShellContainer100" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 17)
+
+[node name="ShellContainer101" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 41)
+
+[node name="ShellContainer102" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 41)
+
+[node name="ShellContainer103" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 41)
+
+[node name="ShellContainer104" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 41)
+
+[node name="ShellContainer105" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 17)
+
+[node name="ShellContainer106" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 17)
+
+[node name="ShellContainer107" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 17)
+
+[node name="ShellContainer108" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 17)
+
+[node name="ShellContainer109" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 41)
+
+[node name="ShellContainer110" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 41)
+
+[node name="ShellContainer111" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 41)
+
+[node name="ShellContainer112" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 41)
+
+[node name="ShellContainer113" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 65)
+
+[node name="ShellContainer114" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 65)
+
+[node name="ShellContainer115" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 65)
+
+[node name="ShellContainer116" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 65)
+
+[node name="ShellContainer117" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 89)
+
+[node name="ShellContainer118" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 89)
+
+[node name="ShellContainer119" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 89)
+
+[node name="ShellContainer120" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 89)
+
+[node name="ShellContainer121" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 65)
+
+[node name="ShellContainer122" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 65)
+
+[node name="ShellContainer123" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 65)
+
+[node name="ShellContainer124" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 65)
+
+[node name="ShellContainer125" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 89)
+
+[node name="ShellContainer126" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 89)
+
+[node name="ShellContainer127" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 89)
+
+[node name="ShellContainer128" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 89)
+
+[node name="ShellContainer129" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 113)
+
+[node name="ShellContainer130" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 113)
+
+[node name="ShellContainer131" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 113)
+
+[node name="ShellContainer132" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 113)
+
+[node name="ShellContainer133" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 137)
+
+[node name="ShellContainer134" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 137)
+
+[node name="ShellContainer135" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 137)
+
+[node name="ShellContainer136" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 137)
+
+[node name="ShellContainer137" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 113)
+
+[node name="ShellContainer138" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 113)
+
+[node name="ShellContainer139" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 113)
+
+[node name="ShellContainer140" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 113)
+
+[node name="ShellContainer141" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 137)
+
+[node name="ShellContainer142" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 137)
+
+[node name="ShellContainer143" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 137)
+
+[node name="ShellContainer144" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 137)
+
+[node name="ShellContainer145" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 17)
+
+[node name="ShellContainer146" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 41)
+
+[node name="ShellContainer147" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 65)
+
+[node name="ShellContainer148" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 89)
+
+[node name="ShellContainer149" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 113)
+
+[node name="ShellContainer150" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 137)
+
+[node name="ShellContainer151" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 17)
+
+[node name="ShellContainer152" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 41)
+
+[node name="ShellContainer153" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 65)
+
+[node name="ShellContainer154" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 89)
+
+[node name="ShellContainer155" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 113)
+
+[node name="ShellContainer156" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 137)
+
+[node name="ShellContainer157" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 161)
+
+[node name="ShellContainer158" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 161)
+
+[node name="ShellContainer159" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 161)
+
+[node name="ShellContainer160" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 161)
+
+[node name="ShellContainer161" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 185)
+
+[node name="ShellContainer162" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 185)
+
+[node name="ShellContainer163" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 185)
+
+[node name="ShellContainer164" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 185)
+
+[node name="ShellContainer165" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 161)
+
+[node name="ShellContainer166" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 161)
+
+[node name="ShellContainer167" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 161)
+
+[node name="ShellContainer168" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 161)
+
+[node name="ShellContainer169" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 185)
+
+[node name="ShellContainer170" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 185)
+
+[node name="ShellContainer171" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 185)
+
+[node name="ShellContainer172" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 185)
+
+[node name="ShellContainer173" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 209)
+
+[node name="ShellContainer174" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 209)
+
+[node name="ShellContainer175" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 209)
+
+[node name="ShellContainer176" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 209)
+
+[node name="ShellContainer177" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 233)
+
+[node name="ShellContainer178" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 233)
+
+[node name="ShellContainer179" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 233)
+
+[node name="ShellContainer180" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 233)
+
+[node name="ShellContainer181" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 209)
+
+[node name="ShellContainer182" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 209)
+
+[node name="ShellContainer183" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 209)
+
+[node name="ShellContainer184" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 209)
+
+[node name="ShellContainer185" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 233)
+
+[node name="ShellContainer186" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 233)
+
+[node name="ShellContainer187" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 233)
+
+[node name="ShellContainer188" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 233)
+
+[node name="ShellContainer189" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 257)
+
+[node name="ShellContainer190" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 257)
+
+[node name="ShellContainer191" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 257)
+
+[node name="ShellContainer192" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 257)
+
+[node name="ShellContainer193" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 281)
+
+[node name="ShellContainer194" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 281)
+
+[node name="ShellContainer195" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 281)
+
+[node name="ShellContainer196" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 281)
+
+[node name="ShellContainer197" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 257)
+
+[node name="ShellContainer198" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 257)
+
+[node name="ShellContainer199" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 257)
+
+[node name="ShellContainer200" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 257)
+
+[node name="ShellContainer201" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 281)
+
+[node name="ShellContainer202" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 281)
+
+[node name="ShellContainer203" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 281)
+
+[node name="ShellContainer204" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 281)
+
+[node name="ShellContainer205" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 161)
+
+[node name="ShellContainer206" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 161)
+
+[node name="ShellContainer207" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 161)
+
+[node name="ShellContainer208" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 161)
+
+[node name="ShellContainer209" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 185)
+
+[node name="ShellContainer210" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 185)
+
+[node name="ShellContainer211" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 185)
+
+[node name="ShellContainer212" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 185)
+
+[node name="ShellContainer213" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 161)
+
+[node name="ShellContainer214" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 161)
+
+[node name="ShellContainer215" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 161)
+
+[node name="ShellContainer216" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 161)
+
+[node name="ShellContainer217" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 185)
+
+[node name="ShellContainer218" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 185)
+
+[node name="ShellContainer219" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 185)
+
+[node name="ShellContainer220" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 185)
+
+[node name="ShellContainer221" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 209)
+
+[node name="ShellContainer222" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 209)
+
+[node name="ShellContainer223" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 209)
+
+[node name="ShellContainer224" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 209)
+
+[node name="ShellContainer225" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 233)
+
+[node name="ShellContainer226" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 233)
+
+[node name="ShellContainer227" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 233)
+
+[node name="ShellContainer228" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 233)
+
+[node name="ShellContainer229" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 209)
+
+[node name="ShellContainer230" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 209)
+
+[node name="ShellContainer231" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 209)
+
+[node name="ShellContainer232" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 209)
+
+[node name="ShellContainer233" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 233)
+
+[node name="ShellContainer234" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 233)
+
+[node name="ShellContainer235" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 233)
+
+[node name="ShellContainer236" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 233)
+
+[node name="ShellContainer237" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 257)
+
+[node name="ShellContainer238" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 257)
+
+[node name="ShellContainer239" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 257)
+
+[node name="ShellContainer240" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 257)
+
+[node name="ShellContainer241" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 281)
+
+[node name="ShellContainer242" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 281)
+
+[node name="ShellContainer243" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 281)
+
+[node name="ShellContainer244" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 281)
+
+[node name="ShellContainer245" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 257)
+
+[node name="ShellContainer246" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 257)
+
+[node name="ShellContainer247" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 257)
+
+[node name="ShellContainer248" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 257)
+
+[node name="ShellContainer249" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 281)
+
+[node name="ShellContainer250" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 281)
+
+[node name="ShellContainer251" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 281)
+
+[node name="ShellContainer252" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 281)
+
+[node name="ShellContainer253" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 161)
+
+[node name="ShellContainer254" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 161)
+
+[node name="ShellContainer255" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 161)
+
+[node name="ShellContainer256" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 161)
+
+[node name="ShellContainer257" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 185)
+
+[node name="ShellContainer258" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 185)
+
+[node name="ShellContainer259" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 185)
+
+[node name="ShellContainer260" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 185)
+
+[node name="ShellContainer261" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 161)
+
+[node name="ShellContainer262" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 161)
+
+[node name="ShellContainer263" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 161)
+
+[node name="ShellContainer264" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 161)
+
+[node name="ShellContainer265" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 185)
+
+[node name="ShellContainer266" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 185)
+
+[node name="ShellContainer267" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 185)
+
+[node name="ShellContainer268" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 185)
+
+[node name="ShellContainer269" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 209)
+
+[node name="ShellContainer270" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 209)
+
+[node name="ShellContainer271" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 209)
+
+[node name="ShellContainer272" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 209)
+
+[node name="ShellContainer273" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 233)
+
+[node name="ShellContainer274" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 233)
+
+[node name="ShellContainer275" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 233)
+
+[node name="ShellContainer276" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 233)
+
+[node name="ShellContainer277" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 209)
+
+[node name="ShellContainer278" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 209)
+
+[node name="ShellContainer279" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 209)
+
+[node name="ShellContainer280" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 209)
+
+[node name="ShellContainer281" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 233)
+
+[node name="ShellContainer282" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 233)
+
+[node name="ShellContainer283" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 233)
+
+[node name="ShellContainer284" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 233)
+
+[node name="ShellContainer285" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 257)
+
+[node name="ShellContainer286" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 257)
+
+[node name="ShellContainer287" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 257)
+
+[node name="ShellContainer288" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 257)
+
+[node name="ShellContainer289" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 281)
+
+[node name="ShellContainer290" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 281)
+
+[node name="ShellContainer291" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 281)
+
+[node name="ShellContainer292" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 281)
+
+[node name="ShellContainer293" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 257)
+
+[node name="ShellContainer294" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 257)
+
+[node name="ShellContainer295" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 257)
+
+[node name="ShellContainer296" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 257)
+
+[node name="ShellContainer297" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 281)
+
+[node name="ShellContainer298" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 281)
+
+[node name="ShellContainer299" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 281)
+
+[node name="ShellContainer300" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 281)
+
+[node name="ShellContainer301" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 161)
+
+[node name="ShellContainer302" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 185)
+
+[node name="ShellContainer303" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 209)
+
+[node name="ShellContainer304" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 233)
+
+[node name="ShellContainer305" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 257)
+
+[node name="ShellContainer306" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 281)
+
+[node name="ShellContainer307" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 161)
+
+[node name="ShellContainer308" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 185)
+
+[node name="ShellContainer309" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 209)
+
+[node name="ShellContainer310" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 233)
+
+[node name="ShellContainer311" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 257)
+
+[node name="ShellContainer312" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 281)
+
+[node name="ShellContainer313" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 305)
+
+[node name="ShellContainer314" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 305)
+
+[node name="ShellContainer315" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 305)
+
+[node name="ShellContainer316" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 305)
+
+[node name="ShellContainer317" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 305)
+
+[node name="ShellContainer318" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 305)
+
+[node name="ShellContainer319" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 305)
+
+[node name="ShellContainer320" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 305)
+
+[node name="ShellContainer321" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 329)
+
+[node name="ShellContainer322" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 329)
+
+[node name="ShellContainer323" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 329)
+
+[node name="ShellContainer324" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 329)
+
+[node name="ShellContainer325" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(20, 353)
+
+[node name="ShellContainer326" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(44, 353)
+
+[node name="ShellContainer327" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(68, 353)
+
+[node name="ShellContainer328" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(92, 353)
+
+[node name="ShellContainer329" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 329)
+
+[node name="ShellContainer330" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 329)
+
+[node name="ShellContainer331" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 329)
+
+[node name="ShellContainer332" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 329)
+
+[node name="ShellContainer333" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(116, 353)
+
+[node name="ShellContainer334" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(140, 353)
+
+[node name="ShellContainer335" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(164, 353)
+
+[node name="ShellContainer336" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(188, 353)
+
+[node name="ShellContainer337" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 305)
+
+[node name="ShellContainer338" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 305)
+
+[node name="ShellContainer339" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 305)
+
+[node name="ShellContainer340" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 305)
+
+[node name="ShellContainer341" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 305)
+
+[node name="ShellContainer342" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 305)
+
+[node name="ShellContainer343" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 305)
+
+[node name="ShellContainer344" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 305)
+
+[node name="ShellContainer345" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 329)
+
+[node name="ShellContainer346" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 329)
+
+[node name="ShellContainer347" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 329)
+
+[node name="ShellContainer348" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 329)
+
+[node name="ShellContainer349" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(213, 353)
+
+[node name="ShellContainer350" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(237, 353)
+
+[node name="ShellContainer351" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(261, 353)
+
+[node name="ShellContainer352" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(285, 353)
+
+[node name="ShellContainer353" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 329)
+
+[node name="ShellContainer354" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 329)
+
+[node name="ShellContainer355" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 329)
+
+[node name="ShellContainer356" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 329)
+
+[node name="ShellContainer357" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(309, 353)
+
+[node name="ShellContainer358" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(333, 353)
+
+[node name="ShellContainer359" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(357, 353)
+
+[node name="ShellContainer360" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(381, 353)
+
+[node name="ShellContainer361" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 305)
+
+[node name="ShellContainer362" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 305)
+
+[node name="ShellContainer363" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 305)
+
+[node name="ShellContainer364" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 305)
+
+[node name="ShellContainer365" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 305)
+
+[node name="ShellContainer366" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 305)
+
+[node name="ShellContainer367" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 305)
+
+[node name="ShellContainer368" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 305)
+
+[node name="ShellContainer369" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 329)
+
+[node name="ShellContainer370" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 329)
+
+[node name="ShellContainer371" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 329)
+
+[node name="ShellContainer372" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 329)
+
+[node name="ShellContainer373" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(404, 353)
+
+[node name="ShellContainer374" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(428, 353)
+
+[node name="ShellContainer375" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(452, 353)
+
+[node name="ShellContainer376" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(476, 353)
+
+[node name="ShellContainer377" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 329)
+
+[node name="ShellContainer378" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 329)
+
+[node name="ShellContainer379" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 329)
+
+[node name="ShellContainer380" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 329)
+
+[node name="ShellContainer381" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(500, 353)
+
+[node name="ShellContainer382" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(524, 353)
+
+[node name="ShellContainer383" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(548, 353)
+
+[node name="ShellContainer384" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(572, 353)
+
+[node name="ShellContainer385" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 305)
+
+[node name="ShellContainer386" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 329)
+
+[node name="ShellContainer387" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(596, 353)
+
+[node name="ShellContainer388" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 305)
+
+[node name="ShellContainer389" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 329)
+
+[node name="ShellContainer390" parent="Shells" instance=ExtResource("2_23eoj")]
+position = Vector2(620, 353)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(320, 180)
+rotation = 0.20944
+ignore_rotation = false
+zoom = Vector2(1.5, 1.5)
+rotation_smoothing_enabled = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -210.0
+offset_top = -116.0
+offset_right = 210.0
+offset_bottom = 116.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.596078, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("4_fc634")
+theme_override_font_sizes/font_size = 80
+text = "GODOT 4
+Random Color
+Shader"
+horizontal_alignment = 1
+vertical_alignment = 1

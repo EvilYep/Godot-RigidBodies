@@ -1,11 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://djnmayse5fvq2"]
+[gd_scene load_steps=6 format=3 uid="uid://djnmayse5fvq2"]
 
 [ext_resource type="Texture2D" uid="uid://8mmbmsc82jlq" path="res://Assets/AntigravPod.png" id="1_ekst2"]
+[ext_resource type="Script" path="res://Areas/pad.gd" id="1_tv778"]
 [ext_resource type="Material" uid="uid://c0145y3jle56i" path="res://Areas/antigrav_pad.tres" id="2_2b431"]
 [ext_resource type="Texture2D" uid="uid://dj7dgwvyakf5j" path="res://Assets/target_12.png" id="2_30kis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4oy5"]
-size = Vector2(54, 208)
+size = Vector2(54, 224)
 
 [node name="AntigravPad" type="Area2D" groups=["areas"]]
 collision_layer = 4
@@ -14,9 +15,10 @@ priority = 1.0
 gravity_space_override = 1
 gravity_point_center = Vector2(0, -1)
 gravity_direction = Vector2(0, -1)
+script = ExtResource("1_tv778")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
-position = Vector2(0, -104)
+position = Vector2(0, -96)
 shape = SubResource("RectangleShape2D_y4oy5")
 
 [node name="Sprite" type="Sprite2D" parent="."]
