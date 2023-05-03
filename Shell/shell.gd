@@ -27,6 +27,8 @@ var impulse: Vector2:
 
 var starting_position: Vector2
 
+@onready var label: Label = $"../Label"
+
 #### BUILT-IN ####
 
 func _ready() -> void:
@@ -39,6 +41,10 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if dragging: 
 		global_transform.origin = get_global_mouse_position()
+
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if dragging: 
+		state.transform.origin = get_global_mouse_position()
 
 #### LOGIC ####
 
@@ -56,6 +62,7 @@ func _set_random_color() -> void:
 	if owner.name != "Normal":
 		var new_color = Color.from_hsv(randf_range(0.0, 1.0), 1.0, 1.0, 1.0)
 		sprite.material.set_shader_parameter("new_color", new_color)
+		label.add_theme_color_override("font_outline_color", new_color)
 
 #### INPUTS ####
 

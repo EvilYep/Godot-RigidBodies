@@ -5,6 +5,7 @@ enum Area {
 	ANTIGRAV_PAD,
 	INVERSE_GRAV_PAD,
 	BLACK_HOLE,
+	POOL,
 }
 
 var directions: Dictionary = {
@@ -42,6 +43,7 @@ func _ready() -> void:
 	for shell in get_tree().get_nodes_in_group("shells"):
 		if shell is Shell: shells.append(shell)
 		if shell.owner.name == "Switch Force Offset":
+			# the other shells are directly "initiated" via tweaking properties in the inspector ==>
 			shell.add_constant_force(Vector2(-force, 0), Vector2(0, 6))
 
 func _physics_process(_delta: float) -> void:
@@ -68,7 +70,7 @@ func _apply_impulse() -> void:
 			"Switch Torque":
 				shell.add_constant_torque(- shell.constant_torque * 2)
 			_:
-				shell.apply_central_impulse(Vector2(randi_range(-impulse, impulse), -impulse))
+				shell.apply_central_impulse(Vector2(randi_range(-impulse, impulse), randi_range(-impulse, impulse)))
 
 func _reset_shells_position() -> void:
 	var tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
@@ -81,22 +83,22 @@ func _reset_shells_position() -> void:
 	for shell in shells:
 		shell.freeze = false if not shell.ignore_unfreeze else true
 
-func _reset_force_based_shells(_force) -> void:		# because for is a keyword and f is ugly
+func _reset_force_based_shells(_force) -> void:
 	shells.shuffle()
 	for shell in shells:
-			match shell.owner.name:		# These are the "default" value I set in the editor
-				"Force Up":
-					shell.constant_force = Vector2(0, -_force)
-				"Force Up Left":
-					shell.constant_force = Vector2(-_force, -_force)
-				"Switch Central Force":
-					shell.constant_force = Vector2(_force, 0)
-				"Switch Force Offset":
-					shell.constant_force = Vector2(0, 0)
-					shell.constant_torque = 0	# Unlike what the documentation says, I found it necessary to do this to "reset" the RigidBody
-					shell.add_constant_force(Vector2(-force, 0), Vector2(0, 6))
-				"Torque", "Torque No Grav", "Switch Torque":
-					shell.constant_torque = -_force
+		shell.constant_force = Vector2(0, 0)
+		shell.constant_torque = 0
+		match shell.owner.name:		# These are the "default" value I set in the editor
+			"Force Up":
+				shell.add_constant_central_force(Vector2(0, -_force))
+			"Force Up Left":
+				shell.add_constant_central_force(Vector2(-_force, -_force))
+			"Switch Central Force":
+				shell.add_constant_central_force(Vector2(_force, 0))
+			"Switch Force Offset":
+				shell.add_constant_force(Vector2(-force, 0), Vector2(0, 6))
+			"Torque", "Torque No Grav", "Switch Torque":
+				shell.add_constant_torque(-_force)
 
 func _apply_directional_force() -> void:
 	for shell in shells:
@@ -113,7 +115,6 @@ func _reset_direction() -> void:
 func _change_selected_area(new_selected_area: String) -> void:
 	var _area: Area2D = load("res://Areas/" + new_selected_area + ".tscn").instantiate()
 	areas.add_child(_area)
-	_area._force_shell_update()
 
 func _connect_ui() -> void:
 	ui.force_changed.connect(func(f): force = f)
@@ -123,8 +124,7 @@ func _connect_ui() -> void:
 	ui.dir_button_pressed.connect(_apply_direction)
 	ui.dir_button_released.connect(_reset_direction)
 	for area in Area:
-		#ui.populate_area_option_button(area.to_lower().replace("_", " ").capitalize(), Area.get(area))
-		ui.populate_area_option_button(area.to_lower().replace("_", " ").capitalize())
+		ui.populate_area_option_button(area.to_lower().replace("_", " ").capitalize(), Area.get(area))
 	ui.area_selected.connect(_on_selected_area_changed)
 
 #### INPUTS ####
@@ -150,4 +150,6 @@ func _unhandled_key_input(event: InputEvent) -> void:
 #### SIGNAL RESPONSES ####
 
 func _on_selected_area_changed(_area: Area) -> void:
+	selected_area = Area.NONE
+	_reset_force_based_shells(force)
 	selected_area = _area

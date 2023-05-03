@@ -7,7 +7,7 @@ extends Node2D
 func _ready() -> void:
 	for shell in get_tree().get_nodes_in_group("shells"):
 		shell.freeze = true
-		shell.set_anim_speed(0.1)
+		shell.set_anim_speed(0.5)
 
 #### VIRTUALS ####
 

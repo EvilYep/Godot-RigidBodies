@@ -1,9 +1,11 @@
-[gd_resource type="Theme" load_steps=20 format=3 uid="uid://b0yna1pxvt1d7"]
+[gd_resource type="Theme" load_steps=23 format=3 uid="uid://b0yna1pxvt1d7"]
 
 [ext_resource type="Texture2D" uid="uid://78y5taa5gbhk" path="res://Assets/slider_h.png" id="1_ense5"]
 [ext_resource type="Texture2D" uid="uid://dbca4cvuami1e" path="res://Assets/slider_v.png" id="1_gk3ll"]
 [ext_resource type="FontFile" uid="uid://cwjdgk64d1rlw" path="res://Assets/Battlenet.ttf" id="1_pnpcg"]
 [ext_resource type="Texture2D" uid="uid://ku18ailkul84" path="res://Assets/UI_panel.png" id="3_lnttm"]
+[ext_resource type="FontFile" uid="uid://c6nylisf2tyxm" path="res://Assets/PressStart2P-Regular.ttf" id="4_lbre2"]
+[ext_resource type="FontFile" uid="uid://c7ovq5axr82kc" path="res://Assets/AtariST8x16SystemFont.ttf" id="4_xmqy1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7mkmk"]
 atlas = ExtResource("1_ense5")
@@ -86,6 +88,14 @@ texture_margin_top = 4.0
 texture_margin_right = 4.0
 texture_margin_bottom = 4.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pwktj"]
+texture = ExtResource("3_lnttm")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+modulate_color = Color(0.286275, 0.631373, 0.631373, 0.588235)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_inqpl"]
 atlas = ExtResource("1_gk3ll")
 region = Rect2(0, 0, 8, 8)
@@ -130,22 +140,29 @@ Label/fonts/font = ExtResource("1_pnpcg")
 OptionButton/colors/font_color = Color(1, 1, 1, 1)
 OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
 OptionButton/constants/modulate_arrow = 1
-OptionButton/constants/outline_size = 3
-OptionButton/fonts/font = ExtResource("1_pnpcg")
+OptionButton/constants/outline_size = 6
+OptionButton/font_sizes/font_size = 8
+OptionButton/fonts/font = ExtResource("4_lbre2")
 OptionButton/styles/hover = SubResource("StyleBoxTexture_kbcy0")
 OptionButton/styles/normal = SubResource("StyleBoxTexture_6572x")
 OptionButton/styles/pressed = SubResource("StyleBoxTexture_wgprw")
 PopupMenu/colors/font_color = Color(0.875, 0.875, 0.875, 1)
 PopupMenu/colors/font_hover_color = Color(1, 1, 1, 1)
 PopupMenu/colors/font_outline_color = Color(0, 0, 0, 1)
-PopupMenu/constants/item_end_padding = 0
-PopupMenu/constants/item_start_padding = 0
-PopupMenu/constants/outline_size = 3
+PopupMenu/constants/outline_size = 5
 PopupMenu/constants/v_separation = 0
-PopupMenu/fonts/font = ExtResource("1_pnpcg")
+PopupMenu/font_sizes/font_size = 8
+PopupMenu/fonts/font = ExtResource("4_lbre2")
 PopupMenu/styles/hover = SubResource("StyleBoxTexture_otgj5")
 PopupMenu/styles/panel = SubResource("StyleBoxTexture_igfo5")
 PopupMenu/styles/panel_disabled = null
+TooltipLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+TooltipLabel/constants/outline_size = 4
+TooltipLabel/constants/shadow_offset_x = 0
+TooltipLabel/constants/shadow_offset_y = 0
+TooltipLabel/font_sizes/font_size = 12
+TooltipLabel/fonts/font = ExtResource("4_xmqy1")
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_pwktj")
 VSlider/icons/grabber = SubResource("AtlasTexture_inqpl")
 VSlider/icons/grabber_highlight = SubResource("AtlasTexture_0lrrr")
 VSlider/styles/grabber_area = SubResource("StyleBoxTexture_2p4ee")

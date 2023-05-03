@@ -215,7 +215,11 @@ texture = SubResource("AtlasTexture_2s20n")
 layout_mode = 0
 offset_right = 104.0
 offset_bottom = 16.0
+tooltip_text = "apply_(central,torque)_impulse(impulse : defined by slider below)
+For \"Switch\" shells : reverts the forces applied to them"
 focus_mode = 0
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [node name="Left" type="TextureRect" parent="."]
 offset_left = 24.0
@@ -228,8 +232,10 @@ texture = SubResource("AtlasTexture_6cv0u")
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+tooltip_text = "apply_force(force : defined in slider below) to all shells in this direction"
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [node name="Up" type="TextureRect" parent="."]
 offset_left = 44.0
@@ -242,8 +248,10 @@ texture = SubResource("AtlasTexture_r5nbx")
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+tooltip_text = "apply_force(force : defined in slider below) to all shells in this direction"
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [node name="Right" type="TextureRect" parent="."]
 offset_left = 64.0
@@ -256,8 +264,10 @@ texture = SubResource("AtlasTexture_x5x6t")
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+tooltip_text = "apply_force(force : defined in slider below) to all shells in this direction"
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [node name="Down" type="TextureRect" parent="."]
 offset_left = 44.0
@@ -270,8 +280,10 @@ texture = SubResource("AtlasTexture_yfe1x")
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
+tooltip_text = "apply_force(force : defined in slider below) to all shells in this direction"
 focus_mode = 0
 mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -284,6 +296,9 @@ offset_top = 103.0
 offset_right = 85.0
 offset_bottom = 119.0
 scale = Vector2(1.5, 1.5)
+tooltip_text = "Used in apply_force(),
+apply_constant_force()
+and apply_constant_central_force()"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_5u0s4")
 max_value = 10000.0
@@ -313,6 +328,11 @@ offset_top = 127.0
 offset_right = 85.0
 offset_bottom = 143.0
 scale = Vector2(1.5, 1.5)
+tooltip_text = "In pixels/sec I think.
+Used in apply_impulse(),
+apply_central_impulse() 
+and apply_torque_impulse() 
+when pressing the spacebar"
 mouse_default_cursor_shape = 2
 theme = ExtResource("7_5u0s4")
 max_value = 3000.0
@@ -341,7 +361,9 @@ offset_left = 98.0
 offset_top = 59.0
 offset_right = 112.0
 offset_bottom = 75.0
+tooltip_text = "Resets shells to their initial positions"
 mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
 texture_normal = SubResource("AtlasTexture_pmimn")
 texture_pressed = SubResource("AtlasTexture_riag1")
 texture_hover = SubResource("AtlasTexture_1x64f")

@@ -5,12 +5,11 @@ func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 	tree_exiting.connect(_on_tree_exiting)
+	_force_shell_update()
 
 func _force_shell_update() -> void:
 	for shell in get_tree().get_nodes_in_group("shells"):
-		if shell is Shell:
-			# Sometimes shells don't "react" in they're already in the zone when it changes, this fixes that
-			shell.apply_central_impulse(Vector2.ZERO)
+		_force_individual_shell_update(shell)
 
 func _force_individual_shell_update(shell: Node2D) -> void:
 	if shell is Shell:

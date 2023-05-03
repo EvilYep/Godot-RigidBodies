@@ -84,10 +84,12 @@ hue_variation_min = -0.33
 hue_variation_max = 0.39
 
 [node name="ShellContainer" type="Node2D"]
+z_index = 1
 script = ExtResource("1_waobp")
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="."]
+z_index = 2
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -117,7 +119,6 @@ texture = ExtResource("5_hgjv2")
 hframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shell"]
-visible = false
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_kqm7m")
 

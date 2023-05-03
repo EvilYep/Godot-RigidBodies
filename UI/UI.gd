@@ -15,6 +15,14 @@ var key_states: Dictionary = {
 	"down": false
 }
 
+var tooltips: Dictionary = {
+	"None": "",
+	"Antigrav Pad": "Area2D adding a -gravity force with a 'combine' Space Override\nProbably the same result as disabling gravity with a 'replace' Space Override",
+	"Inverse Grav Pad": "Same as the above but adding -gravity 2 times,\nthus effectively reverting gravity",
+	"Black Hole": "Area2D with gravity_point set as true and a high gravity value",
+	"Pool": "Area2D with Linear and Angular Damp",
+}
+
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var force_slider: HSlider = $ForceSlider
 @onready var force_label: Label = $ForceSlider/ForceLabel
@@ -63,8 +71,9 @@ func _pop_label(label: Label, time: float) -> void:
 	if key_states.values().has(true) and label.name == "ForceLabel":
 		_pop_label(label, time)
 
-func populate_area_option_button(key: String) -> void:
+func populate_area_option_button(key: String, index: int) -> void:
 	area_option_button.add_item(key)
+	area_option_button.get_popup().set_item_tooltip(index, tooltips[key])
 
 #### INPUTS ####
 

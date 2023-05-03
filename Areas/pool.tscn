@@ -1,0 +1,98 @@
+[gd_scene load_steps=9 format=3 uid="uid://cfyy308pixi8f"]
+
+[ext_resource type="Script" path="res://Areas/pool.gd" id="1_4ntnx"]
+[ext_resource type="PackedScene" uid="uid://cq1q0xlwbj4pg" path="res://Environment/brick.tscn" id="2_v54c8"]
+[ext_resource type="Shader" path="res://Areas/pool.gdshader" id="3_tf6my"]
+[ext_resource type="Texture2D" uid="uid://0chavnbk7gjd" path="res://icon.svg" id="5_bvvr5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3lyx"]
+size = Vector2(202, 123)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ihoq1"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_51sd6"]
+seamless = true
+noise = SubResource("FastNoiseLite_ihoq1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha2vt"]
+shader = ExtResource("3_tf6my")
+shader_parameter/scale = Vector2(1.75, 1.14063)
+shader_parameter/y_zoom = 3.1748
+shader_parameter/reflection_color = Color(0, 0.709804, 1, 0.392157)
+shader_parameter/distorsion_scale = Vector2(0.5, 0.5)
+shader_parameter/intensity = 0.015
+shader_parameter/speed = 0.085
+shader_parameter/wave_amplitude = 0.01
+shader_parameter/wave_speed = 2.836
+shader_parameter/wave_frequency = 0.022
+shader_parameter/noise = SubResource("NoiseTexture2D_51sd6")
+
+[node name="Pool" type="Area2D" groups=["areas"]]
+collision_layer = 4
+collision_mask = 2
+linear_damp_space_override = 1
+linear_damp = 25.0
+angular_damp_space_override = 1
+angular_damp = 50.0
+script = ExtResource("1_4ntnx")
+
+[node name="Bounds" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Brick" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(407, 229)
+
+[node name="Brick3" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(417.5, 260.5)
+rotation = 1.5708
+
+[node name="Brick4" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(417.5, 302.5)
+rotation = 1.5708
+
+[node name="Brick5" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(417.5, 344.5)
+rotation = 1.5708
+
+[node name="Brick2" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(420, 357)
+
+[node name="Brick28" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(462, 357)
+
+[node name="Brick29" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(504, 357)
+
+[node name="Brick30" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(546, 357)
+
+[node name="Brick31" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(588, 357)
+
+[node name="Brick32" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(630, 357)
+
+[node name="Brick14" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(640, 241.5)
+rotation = 1.5708
+
+[node name="Brick15" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(640, 283.5)
+rotation = 1.5708
+
+[node name="Brick16" parent="Bounds" instance=ExtResource("2_v54c8")]
+position = Vector2(640, 325.5)
+rotation = 1.5708
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+position = Vector2(529, 285.5)
+shape = SubResource("RectangleShape2D_c3lyx")
+
+[node name="Water" type="Sprite2D" parent="."]
+z_index = 2
+material = SubResource("ShaderMaterial_ha2vt")
+position = Vector2(528, 287)
+scale = Vector2(1.75, 1.14063)
+texture = ExtResource("5_bvvr5")
+
+[connection signal="item_rect_changed" from="Water" to="." method="_on_water_item_rect_changed"]
