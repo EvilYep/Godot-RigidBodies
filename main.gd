@@ -98,7 +98,7 @@ func _reset_force_based_shells(_force) -> void:
 			"Force Up":
 				shell.add_constant_central_force(Vector2(0, -_force))
 			"Force Up Left":
-				shell.add_constant_central_force(Vector2(-_force, -_force))
+				shell.add_constant_central_force(Vector2(-_force/2, -_force))
 			"Switch Central Force":
 				shell.add_constant_central_force(Vector2(_force, 0))
 			"Switch Force Offset":
