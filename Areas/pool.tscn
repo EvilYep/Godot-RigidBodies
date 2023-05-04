@@ -30,6 +30,7 @@ shader_parameter/noise = SubResource("NoiseTexture2D_51sd6")
 [node name="Pool" type="Area2D" groups=["areas"]]
 collision_layer = 4
 collision_mask = 2
+priority = 1.0
 linear_damp_space_override = 1
 linear_damp = 25.0
 angular_damp_space_override = 1

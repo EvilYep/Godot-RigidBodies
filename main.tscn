@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://c2lhoe37834gr"]
+[gd_scene load_steps=44 format=3 uid="uid://c2lhoe37834gr"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_1kofh"]
 [ext_resource type="PackedScene" uid="uid://dtc60ewnirmg2" path="res://UI/ui.tscn" id="2_3khqp"]
@@ -87,6 +87,79 @@ shader = ExtResource("8_q5aih")
 shader_parameter/new_color = Color(0, 1, 0, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wqnfn"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_wfo84"]
+friction = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lj5hr"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dmc6q"]
+rough = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1r7b"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_axc7u"]
+friction = 0.0
+rough = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ha4kp"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i1pf3"]
+bounce = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qeyv2"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q7enn"]
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tuu3l"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pgsb7"]
+bounce = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36h0h"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_eh5ba"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq5tf"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5xmxy"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mxbte"]
+resource_local_to_scene = true
+shader = ExtResource("8_q5aih")
+shader_parameter/new_color = Color(0, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ja3e"]
 resource_local_to_scene = true
 shader = ExtResource("8_q5aih")
 shader_parameter/new_color = Color(0, 1, 0, 1)
@@ -454,6 +527,91 @@ position = Vector2(380, 145)
 [node name="Torque Impulse" parent="." instance=ExtResource("2_tg51j")]
 position = Vector2(380, 193)
 
+[node name="Frictionless" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(284, 145)
+
+[node name="Shell" parent="Frictionless" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_wfo84")
+
+[node name="Sprite" parent="Frictionless/Shell" index="0"]
+material = SubResource("ShaderMaterial_lj5hr")
+
+[node name="Rough" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(284, 193)
+
+[node name="Shell" parent="Rough" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_dmc6q")
+
+[node name="Sprite" parent="Rough/Shell" index="0"]
+material = SubResource("ShaderMaterial_d1r7b")
+
+[node name="Frictionless Rough" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(272, 169)
+
+[node name="Shell" parent="Frictionless Rough" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_axc7u")
+
+[node name="Sprite" parent="Frictionless Rough/Shell" index="0"]
+material = SubResource("ShaderMaterial_ha4kp")
+
+[node name="Bouncy" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(296, 123)
+
+[node name="Shell" parent="Bouncy" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_i1pf3")
+
+[node name="Sprite" parent="Bouncy/Shell" index="0"]
+material = SubResource("ShaderMaterial_qeyv2")
+
+[node name="Absorb Bounce" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(260, 193)
+
+[node name="Shell" parent="Absorb Bounce" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_q7enn")
+
+[node name="Sprite" parent="Absorb Bounce/Shell" index="0"]
+material = SubResource("ShaderMaterial_tuu3l")
+
+[node name="Bouncy No Grav" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(320, 123)
+
+[node name="Shell" parent="Bouncy No Grav" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_pgsb7")
+gravity_scale = 0.0
+
+[node name="Sprite" parent="Bouncy No Grav/Shell" index="0"]
+material = SubResource("ShaderMaterial_36h0h")
+
+[node name="Bouncy Frictionless" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(260, 145)
+
+[node name="Shell" parent="Bouncy Frictionless" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_eh5ba")
+max_contacts_reported = 3
+
+[node name="Sprite" parent="Bouncy Frictionless/Shell" index="0"]
+material = SubResource("ShaderMaterial_vq5tf")
+
+[node name="Bouncy No Damping" parent="." instance=ExtResource("2_tg51j")]
+position = Vector2(272, 123)
+
+[node name="Shell" parent="Bouncy No Damping" index="1"]
+physics_material_override = SubResource("PhysicsMaterial_5xmxy")
+linear_damp_mode = 1
+
+[node name="Sprite" parent="Bouncy No Damping/Shell" index="0"]
+material = SubResource("ShaderMaterial_mxbte")
+
+[node name="Rotation Locked" parent="." instance=ExtResource("2_tg51j")]
+
+[node name="Shell" parent="Rotation Locked" index="1"]
+position = Vector2(248, 169)
+rotation = 1.5708
+lock_rotation = true
+
+[node name="Sprite" parent="Rotation Locked/Shell" index="0"]
+material = SubResource("ShaderMaterial_5ja3e")
+
 [editable path="Bounds/LargeCollisionLeftBrick4"]
 [editable path="Bounds/LargeCollisionRightBrick12"]
 [editable path="Bounds/LargeCollisionBottomBrick24"]
@@ -470,3 +628,12 @@ position = Vector2(380, 193)
 [editable path="No Gravity"]
 [editable path="Torque"]
 [editable path="Torque No Grav"]
+[editable path="Frictionless"]
+[editable path="Rough"]
+[editable path="Frictionless Rough"]
+[editable path="Bouncy"]
+[editable path="Absorb Bounce"]
+[editable path="Bouncy No Grav"]
+[editable path="Bouncy Frictionless"]
+[editable path="Bouncy No Damping"]
+[editable path="Rotation Locked"]

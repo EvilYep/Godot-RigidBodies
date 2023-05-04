@@ -108,6 +108,7 @@ vertical_alignment = 1
 collision_layer = 2
 collision_mask = 3
 input_pickable = true
+continuous_cd = 2
 max_contacts_reported = 5
 contact_monitor = true
 freeze_mode = 1

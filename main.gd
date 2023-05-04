@@ -5,6 +5,7 @@ enum Area {
 	ANTIGRAV_PAD,
 	INVERSE_GRAV_PAD,
 	BLACK_HOLE,
+	REPULSIVE_FIELD,
 	POOL,
 }
 
@@ -30,6 +31,10 @@ var force: int = 1000:
 	set(f):
 		force = f
 		_reset_force_based_shells(f)
+var time_scale: float = 1.0:
+	set(sc):
+		time_scale = sc
+		Engine.set_time_scale(sc)
 
 var dir_button_pressed := false
 
@@ -77,7 +82,8 @@ func _reset_shells_position() -> void:
 	for shell in shells:
 		shell.freeze = true
 		tween.tween_property(shell, "global_position", shell.starting_position, 0.1)
-		tween.parallel().tween_property(shell, "rotation", 0, 0.1)
+		if shell.owner.name != "Rotation Locked":
+			tween.parallel().tween_property(shell, "rotation", 0, 0.1)
 	await tween.finished
 	await get_tree().create_timer(0.5).timeout
 	for shell in shells:
@@ -119,6 +125,7 @@ func _change_selected_area(new_selected_area: String) -> void:
 func _connect_ui() -> void:
 	ui.force_changed.connect(func(f): force = f)
 	ui.impulse_changed.connect(func(i): impulse = i)
+	ui.time_scale_changed.connect(func(sc): time_scale = sc)
 	ui.reset_button_pressed.connect(_reset_shells_position)
 	ui.spacebar_button_pressed.connect(_apply_impulse)
 	ui.dir_button_pressed.connect(_apply_direction)

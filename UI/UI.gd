@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal force_changed(force)
 signal impulse_changed(impulse)
+signal time_scale_changed(_scale)
 signal reset_button_pressed
 signal spacebar_button_pressed
 signal dir_button_pressed(dir: String)
@@ -20,6 +21,7 @@ var tooltips: Dictionary = {
 	"Antigrav Pad": "Area2D adding a -gravity force with a 'combine' Space Override\nProbably the same result as disabling gravity with a 'replace' Space Override",
 	"Inverse Grav Pad": "Same as the above but adding -gravity 2 times,\nthus effectively reverting gravity",
 	"Black Hole": "Area2D with gravity_point set as true and a high gravity value",
+	"Repulsive Field": "Like Black Hole but applying an opposing force,\nrepelling things instead of sucking them in",
 	"Pool": "Area2D with Linear and Angular Damp",
 }
 
@@ -28,6 +30,8 @@ var tooltips: Dictionary = {
 @onready var force_label: Label = $ForceSlider/ForceLabel
 @onready var impulse_slider: HSlider = $ImpulseSlider
 @onready var impulse_label: Label = $ImpulseSlider/ImpulseLabel
+@onready var time_scale_slider: HSlider = $TimeScaleSlider
+@onready var time_scale_label: Label = $TimeScaleSlider/TimeScaleLabel
 @onready var reset_button: TextureButton = $ResetButton
 @onready var area_option_button: OptionButton = $AreaOptionButton
 
@@ -123,5 +127,10 @@ func _on_impulse_slider_value_changed(impulse: float) -> void:
 	impulse_changed.emit(impulse)
 	impulse_slider.release_focus()
 
+func _on_time_scale_slider_value_changed(_scale: float) -> void:
+	time_scale_label.text = "Time Scale : " + str(_scale)
+	time_scale_changed.emit(_scale)
+	time_scale_slider.release_focus()
+	
 func _on_area_option_button_item_selected(index: int) -> void:
 	area_selected.emit(index)

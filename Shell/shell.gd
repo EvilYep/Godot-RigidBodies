@@ -42,10 +42,6 @@ func _physics_process(_delta: float) -> void:
 	if dragging: 
 		global_transform.origin = get_global_mouse_position()
 
-func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
-	if dragging: 
-		state.transform.origin = get_global_mouse_position()
-
 #### LOGIC ####
 
 func set_anim_speed(speed: float) -> void:

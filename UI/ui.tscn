@@ -356,6 +356,41 @@ theme_override_constants/outline_size = 6
 text = "Impulse : 500"
 horizontal_alignment = 1
 
+[node name="TimeScaleSlider" type="HSlider" parent="."]
+offset_left = 16.0
+offset_top = 151.0
+offset_right = 85.0
+offset_bottom = 167.0
+scale = Vector2(1.5, 1.5)
+tooltip_text = "In pixels/sec I think.
+Used in apply_impulse(),
+apply_central_impulse() 
+and apply_torque_impulse() 
+when pressing the spacebar"
+mouse_default_cursor_shape = 2
+theme = ExtResource("7_5u0s4")
+min_value = 0.05
+max_value = 3.0
+step = 0.05
+value = 1.0
+
+[node name="TimeScaleLabel" type="Label" parent="TimeScaleSlider"]
+layout_mode = 0
+offset_left = -34.6667
+offset_top = -7.33334
+offset_right = 104.333
+offset_bottom = 9.66669
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(69, 8)
+theme = SubResource("Theme_ok0kl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.137255, 0.207843, 0.164706, 0.764706)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 6
+text = "Time Scale : 1"
+horizontal_alignment = 1
+
 [node name="ResetButton" type="TextureButton" parent="."]
 offset_left = 98.0
 offset_top = 59.0
@@ -382,5 +417,6 @@ theme = ExtResource("7_5u0s4")
 [connection signal="pressed" from="SpaceBar/SpaceBarButton" to="." method="_on_space_bar_button_pressed"]
 [connection signal="value_changed" from="ForceSlider" to="." method="_on_force_slider_value_changed"]
 [connection signal="value_changed" from="ImpulseSlider" to="." method="_on_impulse_slider_value_changed"]
+[connection signal="value_changed" from="TimeScaleSlider" to="." method="_on_time_scale_slider_value_changed"]
 [connection signal="pressed" from="ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="item_selected" from="AreaOptionButton" to="." method="_on_area_option_button_item_selected"]

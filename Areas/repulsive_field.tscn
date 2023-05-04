@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctfhuu50r6wik"]
+
+[ext_resource type="Texture2D" uid="uid://hb00aq4nd48a" path="res://Assets/HolyExplosion_96x96.png" id="1_jkjwq"]
+[ext_resource type="Script" path="res://Areas/repulsive_field.gd" id="1_ukbdd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qb752"]
+radius = 64.0703
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_oqw0e"]
+particles_animation = true
+particles_anim_h_frames = 28
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_ps4pf"]
+offsets = PackedFloat32Array(0.830189, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_58ca1"]
+gradient = SubResource("Gradient_ps4pf")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3b5qo"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = 360.0
+angle_max = 720.0
+scale_min = 1.25
+scale_max = 1.25
+color_ramp = SubResource("GradientTexture1D_58ca1")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[node name="RepulsiveField" type="Area2D" groups=["areas"]]
+collision_layer = 4
+collision_mask = 2
+priority = 1.0
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = -3920.0
+script = ExtResource("1_ukbdd")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qb752")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_oqw0e")
+amount = 2
+process_material = SubResource("ParticleProcessMaterial_3b5qo")
+texture = ExtResource("1_jkjwq")
+explosiveness = 0.25
